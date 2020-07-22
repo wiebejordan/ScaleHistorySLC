@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
+      authCtrl = require('./authController'),
       {SERVER_PORT, SESSION_SECRET, DB_URI} = process.env,
       app = express();
 
@@ -24,5 +25,8 @@ massive({
     console.log('db connected')
 }).catch(err => console.log(err));
 
+
+//login/register endpoints
+app.post('/auth/register', authCtrl.register)
 
 app.listen(SERVER_PORT, () => console.log(`Crushing it on port ${SERVER_PORT}`));
