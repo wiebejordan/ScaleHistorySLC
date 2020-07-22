@@ -1,5 +1,7 @@
 import React, {Component, Profiler} from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {getUser} from '../../redux/authReducer';
 
 class UserRegister extends Component{
   constructor(props){
@@ -79,4 +81,4 @@ class UserRegister extends Component{
   }
 }
 
-export default UserRegister;
+export default connect(null, {getUser})(UserRegister);

@@ -1,5 +1,8 @@
 import React, {Component, Profiler} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {getUser} from '../../redux/authReducer';
+import axios from 'axios';
 
 class Main extends Component{
   constructor(props){
@@ -14,6 +17,19 @@ class Main extends Component{
   handleInput = (e) => {
     this.setState({[e.target.name]: e.target.value})
   }
+
+
+  handleLogin = () => {
+    const {username, password} = this.state;
+
+    axios.post('/auth/login', {username, password})
+    .then(res => {
+      this.props.getUser(res.data);
+      this.props.history.push('/');
+    })
+    .catch(err => console.log(err))
+  }
+
 
   render(){
     return(
@@ -39,4 +55,4 @@ class Main extends Component{
   }
 }
 
-export default Main;
+export default connect(null, {getUser})(Main);
