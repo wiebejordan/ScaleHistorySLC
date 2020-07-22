@@ -30,4 +30,9 @@ massive({
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 
+//session endpoints
+app.get('/auth/me', authCtrl.keepUser)
+
+
+
 app.listen(SERVER_PORT, () => console.log(`Crushing it on port ${SERVER_PORT}`));

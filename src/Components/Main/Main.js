@@ -47,7 +47,9 @@ class Main extends Component{
         onChange={e => this.handleInput(e)}
         placeholder='enter password'
         />
-        <button>Login</button>
+
+        <button onClick={this.handleLogin}>Login</button>
+
         <Link to='/userregister'><button>Register</button></Link>
         
       </div>
