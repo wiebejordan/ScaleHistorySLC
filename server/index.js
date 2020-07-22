@@ -29,6 +29,7 @@ massive({
 //login/register endpoints
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
+app.post('/auth/logout', authCtrl.logout)
 
 //session endpoints
 app.get('/auth/me', authCtrl.keepUser)

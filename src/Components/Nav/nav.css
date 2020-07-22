@@ -1,0 +1,29 @@
+.nav{
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(34, 158, 34);
+  
+}
+
+.nav-links{
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-login input{
+  width: 100px;
+  
+}
+
+.nav-user-info{
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
