@@ -23,7 +23,7 @@ class UserRegister extends Component{
   handleRegister = () => {
     const {username, password, email, profile_img, isAdmin} = this.state;
     if(password){
-      axios.post('/auth/register', {username, password, profile_img: profile_img, email, isAdmin})
+      axios.post('/auth/register', {username, password, profile_img: profile_img, email, isAdmin: this.state.isAdmin})
       .then(res => {
         this.props.getUser(res.data);
         this.props.history.push('/');
@@ -75,6 +75,8 @@ class UserRegister extends Component{
          multiple = "false"
          onChange={e => this.handleInput(e)}
          />
+
+        <button onClick={this.handleRegister}>Register!</button>
 
       </div>
     )
