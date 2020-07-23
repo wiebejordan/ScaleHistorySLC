@@ -1,2 +1,2 @@
 select * from axis_players
-where name = ${name};
+where player_id = ${player_id};

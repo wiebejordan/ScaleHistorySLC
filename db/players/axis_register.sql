@@ -1,11 +1,13 @@
 insert into axis_players (
+    player_id,
     name,
     faction,
     side,
     payed
 ) values (
-    ${name},
-    ${faction},
-    ${side},
-    ${payed}
+    $1,
+    $2,
+    $3,
+    $4,
+    $5
 );

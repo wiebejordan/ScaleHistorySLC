@@ -1,2 +1,2 @@
 select * from allied_players
-where name = ${name};
+where player_id = ${player_id};
