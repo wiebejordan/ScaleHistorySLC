@@ -8,7 +8,4 @@ insert into allied_players (
     ${faction},
     ${side},
     ${payed}
-    
-    
-)
-returning player_id, name, faction, side, payed;
+);

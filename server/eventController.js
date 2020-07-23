@@ -8,9 +8,9 @@ module.exports = {
       return res.status(400).send('player already registered!')
     }
 
-    db.players.allied_register(name, faction, side, payed)
+    db.players.allied_register({name, faction, side, payed})
     .then(() => res.sendStatus(200))
-    .catch(() => res.status(500).send(err))
+    .catch(err => res.status(500).send(err))
 
   },
 
@@ -23,7 +23,7 @@ module.exports = {
       return res.status(400).send('player already registered!')
     }
 
-    db.players.axis_register(name, faction, side, payed)
+    db.players.axis_register({name, faction, side, payed})
     .then(() => res.sendStatus(200))
     .catch(() => res.status(500).send(err))
 
