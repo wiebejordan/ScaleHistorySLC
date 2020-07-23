@@ -1,8 +1,20 @@
 import React, {Component, Profiler} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class Gajograd2021 extends Component{
 
+  handleCommandRoom = () => {
+    if(this.props.user.side === 'allies'){
+      this.props.history.push('/commandroom/allies')
+    }
+    else if(this.props.user.side === 'axis'){
+      this.props.history.push('/commandroom/axis')
+    }
+    else{
+      alert('please register for event to access command room')
+    }
+  }
 
   render(){
     return(
@@ -17,7 +29,12 @@ class Gajograd2021 extends Component{
         <button>Register For Event</button>
         </Link>
         
-        <button>Go to Command Room</button>
+        {this.props.user.username
+        ?(
+        
+        <button onClick={this.handleCommandRoom}>Go to Command Room</button>
+        )
+        :null}
       </div>
     
       
@@ -25,4 +42,6 @@ class Gajograd2021 extends Component{
   }
 }
 
-export default Gajograd2021;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps)(Gajograd2021);

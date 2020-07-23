@@ -1,7 +1,7 @@
 const initialState = {
   user: {
     username: '',
-    profileImg: ''
+    profileImg: '',
   }
 }
 

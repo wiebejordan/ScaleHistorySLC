@@ -5,7 +5,7 @@ module.exports = {
     
     const foundPlayer = await db.players.check_player({player_id});
     if(foundPlayer[0]){
-      return res.status(400).send('player already registered!')
+      return res.status(400).send('player already registered!').console.log('player already registered!')
     }
 
     db.players.player_register(player_id, name, faction, side, payed)

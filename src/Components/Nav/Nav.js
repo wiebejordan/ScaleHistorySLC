@@ -48,6 +48,8 @@ class Nav extends Component{
     axios.post('/auth/logout')
     .then(() => {
       this.props.clearUser();
+      alert('you have succesfully logged out')
+      this.setState({username: '', password: ''});
       this.props.history.push('/');
     })
   }
@@ -87,9 +89,9 @@ class Nav extends Component{
 
         <button onClick={this.handleLogin}>Login</button>
         
-        
+        or
 
-        <Link to='/userregister'><button>Register</button></Link>
+        <Link to='/userregister'><button>Sign up!</button></Link>
         </div>)
 
         :(

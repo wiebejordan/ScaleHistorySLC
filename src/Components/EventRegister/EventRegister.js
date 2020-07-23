@@ -14,6 +14,18 @@ class EventRegister extends Component{
       }
     }
 
+    componentDidMount(){
+      if(!this.props.user.username){
+        this.props.history.push('/Gajograd2021')
+        alert('please log in to register for event')
+      }
+      else if(this.props.user.side){
+        this.props.history.push('/Gajograd2021')
+        alert(`${this.props.user.username}, you are already registered for this event with the ${this.props.user.side}! 
+        Head to the Command Room for briefing!`)
+      }
+    }
+
     handleOptionChange = changeEvent => {
       this.setState({
         selectedOption: changeEvent.target.value
@@ -29,14 +41,15 @@ class EventRegister extends Component{
       const {player_id, name, side, faction, payed} = this.state;
 
         Axios.post('/api/playerregister', {player_id: this.props.user.user_id, name: this.state.name, side: this.state.selectedOption, faction: this.state.faction, payed: this.state.payed})
-        .then(() => {
-          this.props.history.push('/Allies');
+        .then(() => { alert('You are now registered for Gajograd 2021! Head to the Command Room to plan with your teammates!')
+          
         })
         .catch(err => console.log(err));
 
         Axios.put(`/api/addside/${this.props.user.user_id}`, {side: this.state.selectedOption})
-        .then(() => console.log('side updated!'))
+        .then(() => this.props.history.push(`/Gajograd2021`))
         .catch(err => console.log(err))
+        
       }
       
     

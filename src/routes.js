@@ -15,5 +15,7 @@ export default (
     <Route path='/profile/:userid' component={Profile}/>
     <Route path='/userregister' component={UserRegister}/>
     <Route path='/eventregister' component={EventRegister}/>
+    <Route path='/commandroom/allies' component={Allies}/>
+    <Route path='/commandroom/axis' component={Axis}/>
   </Switch>
 );
