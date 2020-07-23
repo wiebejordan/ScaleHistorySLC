@@ -4,6 +4,7 @@ const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
       authCtrl = require('./authController'),
+      eventCtrl = require('./eventController'),
       {SERVER_PORT, SESSION_SECRET, DB_URI} = process.env,
       app = express();
 
@@ -33,6 +34,10 @@ app.post('/auth/logout', authCtrl.logout)
 
 //session endpoints
 app.get('/auth/me', authCtrl.keepUser)
+
+//event register endpoints
+app.post('/api/alliedregister', eventCtrl.alliedregister)
+app.post('/api/axisregister', eventCtrl.axisregister)
 
 
 
