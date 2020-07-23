@@ -36,8 +36,9 @@ app.post('/auth/logout', authCtrl.logout)
 app.get('/auth/me', authCtrl.keepUser)
 
 //event register endpoints
-app.post('/api/alliedregister', eventCtrl.alliedregister)
-app.post('/api/axisregister', eventCtrl.axisregister)
+app.post('/api/playerregister', eventCtrl.playerregister)
+app.put('/api/addside/:user_id', eventCtrl.addSide)
+
 
 
 

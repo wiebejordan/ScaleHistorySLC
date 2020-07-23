@@ -1,2 +1,2 @@
-select * from axis_players
+select * from reg_players
 where player_id = ${player_id};

@@ -1,4 +1,4 @@
-insert into axis_players (
+insert into reg_players (
     player_id,
     name,
     faction,

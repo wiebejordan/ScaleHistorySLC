@@ -8,7 +8,6 @@ class EventRegister extends Component{
 
       this.state = {
         name: '',
-        side: '',
         faction: '',
         payed: false,
         selectedOption: 'allies'
@@ -29,19 +28,15 @@ class EventRegister extends Component{
     handleEventRegister = () => {
       const {player_id, name, side, faction, payed} = this.state;
 
-      if(this.state.selectedOption === 'allies'){
-        Axios.post('/api/alliedregister', {player_id: this.props.user.user_id, name: this.state.name, side: this.state.selectedOption, faction: this.state.faction, payed: this.state.payed})
+        Axios.post('/api/playerregister', {player_id: this.props.user.user_id, name: this.state.name, side: this.state.selectedOption, faction: this.state.faction, payed: this.state.payed})
         .then(() => {
           this.props.history.push('/Allies');
         })
-        .catch(err => console.log(err));}
+        .catch(err => console.log(err));
 
-      else if(this.state.selectedOption === 'axis'){
-        Axios.post('/api/axisregister', {player_id: this.props.user.user_id, name: this.state.name, side: this.state.selectedOption, faction: this.state.faction, payed: this.state.payed})
-        .then(() => {
-          this.props.history.push('/Axis');
-        })
-        .catch(err => console.log(err));}
+        Axios.put(`/api/addside/${this.props.user.user_id}`, {side: this.state.selectedOption})
+        .then(() => console.log('side updated!'))
+        .catch(err => console.log(err))
       }
       
     
@@ -76,6 +71,8 @@ class EventRegister extends Component{
             </label>
           </div>
         </form>
+
+  
 
         Faction: <input
         name='faction'
