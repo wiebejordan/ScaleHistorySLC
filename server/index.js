@@ -46,7 +46,7 @@ app.get('/api/alliedplayers', eventCtrl.getAllies);
 app.get('/api/axisplayers', eventCtrl.getAxis);
 
 //mail endpoints
-app.post('/api/email', mailCtrl.email);
+app.post('/api/email/:email', mailCtrl.email);
 
 
 

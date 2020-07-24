@@ -36,7 +36,7 @@ class UserRegister extends Component{
   }
 
   handleWelcomeEmail = () => {
-    axios.post('/api/email')
+    axios.post(`/api/email/${this.state.email}`)
     .then(res => {})
     .catch(err => console.log(err))
   }

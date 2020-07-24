@@ -3,6 +3,7 @@ const initialState = {
     username: '',
     profileImg: '',
     side: '',
+    email: '',
     user_id: null
   }
 }
