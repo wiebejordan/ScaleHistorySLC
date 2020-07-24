@@ -98,8 +98,9 @@ class Nav extends Component{
         
         <div className='nav-user-info'>
         <p>Welcome,</p>
+        <Link to={`/profile/${this.props.user.user_id}`}>
         <nav> {this.props.user.username}</nav>
-
+        </Link>
         <button onClick={this.logout}>Logout</button>
         </div>)}
         

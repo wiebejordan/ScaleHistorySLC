@@ -31,6 +31,7 @@ massive({
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.post('/auth/logout', authCtrl.logout)
+app.delete('/auth/delete/:player_id', authCtrl.deleteUser)
 
 //session endpoints
 app.get('/auth/me', authCtrl.keepUser)

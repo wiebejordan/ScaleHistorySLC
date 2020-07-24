@@ -56,6 +56,15 @@ module.exports = {
       req.session.destroy();
       res.sendStatus(200);
       console.log('logged out!');
+    },
+
+    deleteUser: (req, res) => {
+      const db = req.app.get('db'),
+          {player_id} = req.params;
+
+      db.users.delete_user(player_id)
+      .then(() => res.sendStatus(200))
+      .catch(err => res.status(500).send(err));
     }
 
 }

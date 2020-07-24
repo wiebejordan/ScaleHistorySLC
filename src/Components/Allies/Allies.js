@@ -42,7 +42,7 @@ class Allies extends Component{
 
     return(
       <div>
-        Allies
+        <h1>Allied Command Room</h1>
         {mapPlayers}
       </div>
     )

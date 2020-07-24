@@ -42,7 +42,7 @@ class Axis extends Component{
 
     return(
       <div>
-        Axis
+        <h1>Axis Command Room</h1>
         {mapPlayers}
       </div>
     )
