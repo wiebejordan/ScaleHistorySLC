@@ -49,6 +49,8 @@ class EventRegister extends Component{
         Axios.put(`/api/addside/${this.props.user.user_id}`, {side: this.state.selectedOption})
         .then(() => this.props.history.push(`/Gajograd2021`))
         .catch(err => console.log(err))
+
+        Axios.post('/')
         
       }
       

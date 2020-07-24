@@ -5,6 +5,7 @@ const express = require('express'),
       session = require('express-session'),
       authCtrl = require('./authController'),
       eventCtrl = require('./eventController'),
+      mailCtrl = require('./mailController'),
       {SERVER_PORT, SESSION_SECRET, DB_URI} = process.env,
       app = express();
 
@@ -44,6 +45,8 @@ app.put('/api/addside/:user_id', eventCtrl.addSide)
 app.get('/api/alliedplayers', eventCtrl.getAllies);
 app.get('/api/axisplayers', eventCtrl.getAxis);
 
+//mail endpoints
+app.post('/api/email', mailCtrl.email);
 
 
 

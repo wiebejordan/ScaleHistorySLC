@@ -27,11 +27,18 @@ class UserRegister extends Component{
       .then(res => {
         this.props.getUser(res.data);
         this.props.history.push('/');
+        this.handleWelcomeEmail();
       })
       .catch(err => console.log(err))
     } else {
       alert('enter password');
     }
+  }
+
+  handleWelcomeEmail = () => {
+    axios.post('/api/email')
+    .then(res => {})
+    .catch(err => console.log(err))
   }
 
 
