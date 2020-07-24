@@ -22,7 +22,25 @@ module.exports = {
     db.users.add_side({side, user_id})
       .then(() => res.status(200).send('side updated!'))
       .catch(err => res.status(500).send(err))
-  }
+  },
+
+  getAllies: (req, res) => {
+    const db = req.app.get('db');
+
+    db.players.get_allies()
+      .then(players => res.status(200).send(players))
+      .catch(err => res.status(500).send(err))
+
+  },
+
+  getAxis: (req, res) => {
+    const db = req.app.get('db');
+
+    db.players.get_axis()
+      .then(players => res.status(200).send(players))
+      .catch(err => res.status(500).send(err))
+
+  },
 
 
 

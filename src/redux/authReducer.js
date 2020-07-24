@@ -2,6 +2,8 @@ const initialState = {
   user: {
     username: '',
     profileImg: '',
+    side: '',
+    user_id: null
   }
 }
 

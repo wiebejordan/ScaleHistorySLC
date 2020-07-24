@@ -39,6 +39,10 @@ app.get('/auth/me', authCtrl.keepUser)
 app.post('/api/playerregister', eventCtrl.playerregister)
 app.put('/api/addside/:user_id', eventCtrl.addSide)
 
+//command room endpoints
+app.get('/api/alliedplayers', eventCtrl.getAllies);
+app.get('/api/axisplayers', eventCtrl.getAxis);
+
 
 
 

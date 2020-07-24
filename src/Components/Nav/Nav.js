@@ -30,7 +30,7 @@ class Nav extends Component{
     axios.post('/auth/login', {username, password})
     .then(res => {
       this.props.getUser(res.data);
-      this.props.history.push('/');
+      alert(`Welcome ${this.props.user.username}!`);
     })
     .catch(err => console.log(err))
   }
