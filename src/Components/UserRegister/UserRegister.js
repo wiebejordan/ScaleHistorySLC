@@ -28,6 +28,7 @@ class UserRegister extends Component{
         this.props.getUser(res.data);
         this.props.history.push('/');
         this.handleWelcomeEmail();
+        alert(`Welcome to ScaleHistorySLC, ${this.state.username}!`)
       })
       .catch(err => console.log(err))
     } else {

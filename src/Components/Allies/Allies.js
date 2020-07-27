@@ -2,6 +2,7 @@ import React, {Component, Profiler} from 'react';
 import {connect} from 'react-redux';
 import Axios from 'axios';
 import '../Allies/Allies.css';
+import io from 'socket.io-client';
 
 class Allies extends Component{
     constructor(props){
@@ -19,6 +20,11 @@ class Allies extends Component{
     //   alert('please register for event to enter Command Room')
     // }
     this.getAllies();
+    const socket = io();
+    socket.emit('test', {test:'test!'})
+    socket.on('hello', () => {
+    console.log('aaa')
+})
   }
 
   getAllies = () => {

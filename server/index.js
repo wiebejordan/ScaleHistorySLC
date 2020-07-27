@@ -7,7 +7,9 @@ const express = require('express'),
       eventCtrl = require('./eventController'),
       mailCtrl = require('./mailController'),
       {SERVER_PORT, SESSION_SECRET, DB_URI} = process.env,
-      app = express();
+      app = require('express')(),
+      server = require('http').createServer(app);
+      io = require('socket.io')(server);
 
 
 app.use(express.json());
@@ -48,6 +50,14 @@ app.get('/api/axisplayers', eventCtrl.getAxis);
 //mail endpoints
 app.post('/api/email/:email', mailCtrl.email);
 
+//socket 
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
 
 
-app.listen(SERVER_PORT, () => console.log(`Crushing it on port ${SERVER_PORT}`));
+server.listen(SERVER_PORT, () => console.log(`Crushing it on port ${SERVER_PORT}`));
