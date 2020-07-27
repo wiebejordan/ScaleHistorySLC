@@ -2,6 +2,7 @@ import React, {Component, Profiler} from 'react';
 import {connect} from 'react-redux';
 import Axios from 'axios';
 import '../Axis/Axis.css';
+import AxisChat from '../AxisChat/AxisChat';
 
 class Axis extends Component{
     constructor(props){
@@ -44,6 +45,8 @@ class Axis extends Component{
       <div>
         <h1>Axis Command Room</h1>
         {mapPlayers}
+
+        <AxisChat/>
       </div>
     )
   }

@@ -56,9 +56,12 @@ app.post('/api/GG2021reg/:email', mailCtrl.GG2021regEmail);
 
 io.on('connection', (socket) => {
   console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
   socket.emit('your id', socket.id);
-  socket.on('send message', ({name, message}) => {
-      io.emit("message", {name, message})
+  socket.on('send message', (message) => {
+      io.emit("message", message)
   })
   socket.on('send-nickname', nickname => {
     socket.nickname = nickname;

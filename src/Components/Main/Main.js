@@ -14,8 +14,18 @@ class Main extends Component{
   render(){
     return(
       <div className='main'>
-        <img src='https://media.cdn.adultswim.com/uploads/20200303/thumbnails/2_20331154179-decker_220.jpg'/>
-        
+        <div className='main-container'>
+        <h1>The Latest:</h1>
+        <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/rf-1I8K0TSE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div className='blogpost'>
+        <h2>Current Project - OSS Deer Team - 7/21/2020</h2>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Ho_Chi_Minh_%28third_from_left_standing%29_and_the_OSS_in_1945.jpg'/>
+        <p></p>
+        </div>
+        </div>
       </div>
     )
   }

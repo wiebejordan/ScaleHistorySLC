@@ -3,18 +3,15 @@ import io from 'socket.io-client'
 import '../AlliesChat/AlliesChat.css'
 import {connect} from 'react-redux';
 
-const  AlliesChat = () => {
+const  AxisChat = () => {
   const [yourID, setYourID] = useState();
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
+
   const socketRef = useRef();
 
   useEffect(() => {
     socketRef.current = io.connect('/');
-
-    socketRef.current.on('connectToRoom', data => {
-      
-    })
 
     socketRef.current.on("your id", id => {
       setYourID(id);
@@ -79,5 +76,4 @@ const  AlliesChat = () => {
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps)(AlliesChat);
-
+export default connect(mapStateToProps)(AxisChat);
