@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import io from 'socket.io-client'
 import '../AlliesChat/AlliesChat.css'
+import {connect} from 'react-redux';
 
 const  AlliesChat = () => {
   const [yourID, setYourID] = useState();
@@ -49,7 +50,7 @@ const  AlliesChat = () => {
             return (
               <div className='my-row' key={index}>
                 <div className='my-message'>
-                  {message.body}
+                  {message.body} 
                 </div>
               </div>
             )
@@ -73,5 +74,7 @@ const  AlliesChat = () => {
 
 };
 
-export default AlliesChat;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps)(AlliesChat);
 

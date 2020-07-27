@@ -50,14 +50,20 @@ app.get('/api/axisplayers', eventCtrl.getAxis);
 
 //mail endpoints
 app.post('/api/email/:email', mailCtrl.email);
+app.post('/api/GG2021reg/:email', mailCtrl.GG2021regEmail);
 
 //socket 
 
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.emit('your id', socket.id);
-  socket.on('send message', body => {
-      io.emit("message", body)
+  socket.on('send message', ({name, message}) => {
+      io.emit("message", {name, message})
+  })
+  socket.on('send-nickname', nickname => {
+    socket.nickname = nickname;
+    users.push(socket.nickname);
+    console.log(users);
   })
 }) 
 

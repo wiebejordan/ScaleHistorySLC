@@ -50,8 +50,16 @@ class EventRegister extends Component{
         .then(() => this.props.history.push(`/Gajograd2021`))
         .catch(err => console.log(err))
 
-        Axios.post('/')
+        Axios.post('/');
+
+        this.handleRegisterEmail();
         
+      }
+
+      handleRegisterEmail = () => {
+        Axios.post(`/api/GG2021reg/${this.props.user.email}?side=${this.state.selectedOption}`)
+        .then(res => {})
+        .catch(err => console.log(err))
       }
       
     
