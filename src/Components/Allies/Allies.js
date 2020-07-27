@@ -2,7 +2,8 @@ import React, {Component, Profiler} from 'react';
 import {connect} from 'react-redux';
 import Axios from 'axios';
 import '../Allies/Allies.css';
-import io from 'socket.io-client';
+import AlliesChat from '../AlliesChat/AlliesChat'
+
 
 class Allies extends Component{
     constructor(props){
@@ -11,6 +12,7 @@ class Allies extends Component{
       this.state = {
 
         players: []
+        
       }
     }
 
@@ -20,11 +22,6 @@ class Allies extends Component{
     //   alert('please register for event to enter Command Room')
     // }
     this.getAllies();
-    const socket = io();
-    socket.emit('test', {test:'test!'})
-    socket.on('hello', () => {
-    console.log('aaa')
-})
   }
 
   getAllies = () => {
@@ -33,6 +30,11 @@ class Allies extends Component{
     .then(res => this.setState({players: res.data}))
     .catch(err => console.log(err));
   }
+
+  
+  
+
+  
 
   render(){
       const mapPlayers = this.state.players.map((player, i) => (
@@ -50,6 +52,8 @@ class Allies extends Component{
       <div>
         <h1>Allied Command Room</h1>
         {mapPlayers}
+
+        <AlliesChat/>
       </div>
     )
   }

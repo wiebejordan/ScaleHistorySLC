@@ -8,8 +8,9 @@ const express = require('express'),
       mailCtrl = require('./mailController'),
       {SERVER_PORT, SESSION_SECRET, DB_URI} = process.env,
       app = require('express')(),
-      server = require('http').createServer(app);
-      io = require('socket.io')(server);
+      server = require('http').createServer(app),
+      socket = require('socket.io'),
+      io = socket(server);
 
 
 app.use(express.json());
@@ -54,10 +55,12 @@ app.post('/api/email/:email', mailCtrl.email);
 
 io.on('connection', (socket) => {
   console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-});
+  socket.emit('your id', socket.id);
+  socket.on('send message', body => {
+      io.emit("message", body)
+  })
+}) 
+
 
 
 server.listen(SERVER_PORT, () => console.log(`Crushing it on port ${SERVER_PORT}`));
