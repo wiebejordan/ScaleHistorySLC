@@ -63,7 +63,8 @@ class Nav extends Component{
 
           <nav>Videos</nav>
 
-          <nav>Blog</nav>
+          <Link to='/blog'><nav>Blog</nav></Link>
+          
 
           <Link to='/Gajograd2021'><nav>GajoGrad Event</nav></Link>
           

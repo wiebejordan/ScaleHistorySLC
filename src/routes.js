@@ -7,6 +7,7 @@ import Gajograd2021 from './Components/Gajograd2021/Gajograd2021';
 import Profile from './Components/Profile/Profile';
 import Allies from './Components/Allies/Allies';
 import Axis from './Components/Axis/Axis';
+import Blog from './Components/Blog/Blog';
 
 export default (
   <Switch>
@@ -17,5 +18,6 @@ export default (
     <Route path='/eventregister' component={EventRegister}/>
     <Route path='/commandroom/allies' component={Allies}/>
     <Route path='/commandroom/axis' component={Axis}/>
+    <Route path='/blog' component={Blog}/>
   </Switch>
 );

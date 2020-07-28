@@ -6,6 +6,7 @@ const express = require('express'),
       authCtrl = require('./authController'),
       eventCtrl = require('./eventController'),
       mailCtrl = require('./mailController'),
+      postCtrl = require('./postController'),
       {SERVER_PORT, SESSION_SECRET, DB_URI} = process.env,
       app = require('express')(),
       server = require('http').createServer(app),
@@ -51,6 +52,11 @@ app.get('/api/axisplayers', eventCtrl.getAxis);
 //mail endpoints
 app.post('/api/email/:email', mailCtrl.email);
 app.post('/api/GG2021reg/:email', mailCtrl.GG2021regEmail);
+
+//blog post endpoints
+app.get('/api/blogposts', postCtrl.getPosts);
+app.get('/api/blogpost/:postid', postCtrl.getSinglePost);
+app.post('/api/post/', postCtrl.newPost);
 
 //socket 
 

@@ -38,11 +38,8 @@ class Allies extends Component{
 
   render(){
       const mapPlayers = this.state.players.map((player, i) => (
-        <div className='player-chart' key={i}>
-          <img src={player.profile_img} style={{
-          height: '50px',
-          width: '50px',
-          }}/>
+        <div key={i} className='player-chart' >
+          <img src={player.profile_img} />
           <p>{player.name}</p>
           <p>{player.faction}</p>
         </div>
