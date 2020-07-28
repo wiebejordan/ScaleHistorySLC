@@ -1,0 +1,25 @@
+.profile-main{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://ae01.alicdn.com/kf/HTB137tLLpXXXXb4XFXXq6xXFXXXT/Vintage-World-War-II-We-Can-Do-It-Inspirational-Recruitment-Poster-Bar-Home-Decor-Retro-Kraft.jpg);
+  /* background-size: cover; */
+}
+
+
+
+.profile-container{
+  height: 400px;
+  width: 400px;
+  background-color: teal;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-container img{
+  border-radius: 50%;
+}

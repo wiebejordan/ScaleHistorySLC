@@ -1,9 +1,33 @@
+.allies-main{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://www.iwm.org.uk/sites/default/files/styles/feature_hero_desktop_1x/public/2018-01/map_detail.jpg?itok=mzB9hsiX);
+  color: white;
+}
+
+.allies-container{
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(22, 22, 22, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-container{
+  width: 800px;
+  height: auto;
+  background-color: wheat;
+}
+
 .player-chart{
-  width: 80vw;
-  height: 60px;
+  width: 800px;
+  /* height: auto; */
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: 1px solid black;
   margin: 0;
+  
 
 }

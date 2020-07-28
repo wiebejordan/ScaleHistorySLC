@@ -1,7 +1,7 @@
 .chat-container{
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 300px;
   max-height: 500px;
   overflow: auto;
   width: 800px;
@@ -14,7 +14,7 @@
 
 .chat-window{
   width: 98%;
-  height: 100px;
+  height: 300px;
   border-radius: 10px;
   margin-top: 10px;
   padding-left: 10px;
@@ -60,4 +60,8 @@
   text-align: center;
   border-top-left-radius: 10%;
   border-bottom-left-radius: 10%;
+}
+
+.message-input{
+  width: 750px;
 }

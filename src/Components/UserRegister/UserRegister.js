@@ -3,6 +3,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/authReducer';
 import '../UserRegister/UserRegister.css';
+import ImageUploader from 'react-images-upload';
 
 class UserRegister extends Component{
   constructor(props){
@@ -43,6 +44,9 @@ class UserRegister extends Component{
     .catch(err => console.log(err))
   }
 
+  onDrop = (picture) => {
+    this.setState({profile_img: picture});
+  }
 
   render(){
      
@@ -79,13 +83,14 @@ class UserRegister extends Component{
         placeholder='enter email'
         />
 
-        Upload Profile Photo:<input 
-         name='profile_img'
-         type="file" 
-         accept="image/*" 
-         multiple = "false"
-         onChange={e => this.handleInput(e)}
-         />
+        <ImageUploader
+          withIcon={true}
+          buttonText='Choose profile image'
+          onChange={this.onDrop}
+          imgExtension={['.jpg', '.gif', '.png', '.gif']}
+          maxFileSize={5242880}
+          singleImage={true}
+            />
 
         <button onClick={this.handleRegister}>Register!</button>
         </div>

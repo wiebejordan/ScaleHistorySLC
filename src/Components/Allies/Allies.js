@@ -49,11 +49,16 @@ class Allies extends Component{
       ))
 
     return(
-      <div>
+      <div className='allies-main'>
+        <div className='allies-container'>
         <h1>Allied Command Room</h1>
+        
+        <div className='player-container'>
         {mapPlayers}
+        </div>
 
         <AlliesChat/>
+        </div>
       </div>
     )
   }
