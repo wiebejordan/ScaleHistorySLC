@@ -26,14 +26,16 @@ class Blog extends Component {
     render(){
       const mappedPosts = this.state.posts.map((post, i) => (
         <div key={i} className='post-box'>
-          <p>{post.title}</p>
             
           <div className='post-author'>
+            <p className='post-title'>{post.title}</p>
+            <div className='post-author-right'>
             <p>{post.username}</p>
-            <img src={post.profile_img} alt={post.username}/>
+            <img className='user-image' src={post.profile_img} alt={post.username}/>
+            </div>
           </div>
 
-          <img src={post.img}/>
+          <img className='post-image' src={post.img}/>
         </div>
       ))
       return(
