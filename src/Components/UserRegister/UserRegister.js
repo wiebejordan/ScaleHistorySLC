@@ -2,6 +2,7 @@ import React, {Component, Profiler} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/authReducer';
+import '../UserRegister/UserRegister.css';
 
 class UserRegister extends Component{
   constructor(props){
@@ -47,8 +48,10 @@ class UserRegister extends Component{
      
 
     return(
-      <div>
+      <div className='UR-main'>
 
+        <div className='UR-container'>
+        <h1>USER REGISTER</h1>
         <img src={this.state.profile_img}
         style={{
           height: '100px',
@@ -85,6 +88,7 @@ class UserRegister extends Component{
          />
 
         <button onClick={this.handleRegister}>Register!</button>
+        </div>
 
       </div>
     )

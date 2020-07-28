@@ -1,0 +1,51 @@
+.GGmain{
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(https://launch.battlefront.co.nz/wp-content/uploads/Stalingrad-artwork.jpeg);
+  background-size: cover;
+  color: white;
+  
+}
+
+.container{
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(22, 22, 22, 0.7);
+
+}
+
+.container header{
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.container h3{
+  margin: 0;
+}
+
+.container img{
+  height: 400px;
+  width: 550px;
+  margin-top: 0px;
+}
+
+.container section{
+  width: 75vw;
+}
+
+.button-box{
+  width: 65vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-box button{
+  height: 50px;
+}

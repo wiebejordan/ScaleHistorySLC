@@ -1,6 +1,7 @@
 import React, {Component, Profiler} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import '../Gajograd2021/Gajograd2021.css';
 
 class Gajograd2021 extends Component{
 
@@ -18,13 +19,21 @@ class Gajograd2021 extends Component{
 
   render(){
     return(
-      <div>
+      <div className='GGmain'>
+        <div className='container'>
         <header>GAJOGRAD 2021</header>
+        <h3>January 18th, 2021</h3>
+        <img src='https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/82867472_3146249728737108_3513119034348404736_n.jpg?_nc_cat=104&_nc_sid=b9115d&_nc_ohc=jGh2DbsHcPsAX83kPPK&_nc_ht=scontent-den4-1.xx&oh=5ba2ad87e623344cb1415360cc0bbd56&oe=5F4486C5'/>
 
-        <img src='https://launch.battlefront.co.nz/wp-content/uploads/Stalingrad-artwork.jpeg'/>
+        <section>
+        The great city of Gajograd, located in Eastern Europe, is a strategic objective for both the Allies and the Axis, as it is a great supply center. Each side throws massive amounts of men and machine into the fray for control of the vital city and the surrounding rural area. 
+        <br/>
+        Gajograd is a Bolt Action event with an Axis vs Allies format. Players will register before the event for either side, and then create a force consisting of 800 points. Individual scores will be tracked, but each player’s combined scores will be totaled and one team will claim victory! 
+        <br/>
+        There will be 3 games, followed by prizes for the winning team, best Axis and best Allied general, and more!</section>
 
-        <section>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</section>
-
+        
+        <div className='button-box'>
         <Link to='/eventregister'>
         <button>Register For Event</button>
         </Link>
@@ -35,6 +44,8 @@ class Gajograd2021 extends Component{
         <button onClick={this.handleCommandRoom}>Go to Command Room</button>
         )
         :null}
+        </div>
+        </div>
       </div>
     
       

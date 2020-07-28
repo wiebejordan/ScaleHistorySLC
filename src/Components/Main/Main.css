@@ -1,19 +1,19 @@
 .main {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: black;
-  background-image: url(https://i.imgur.com/97QFsfB.jpg);
+  background-image: url(https://i.imgur.com/UNyQcQH.jpg);
   background-size: cover;
   background-repeat: repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  overflow: scroll;
 
 }
 
 .main-container {
-  height: 100vh;
+  height: auto;
   width: 80vw;
   display: flex;
   flex-direction: column;
