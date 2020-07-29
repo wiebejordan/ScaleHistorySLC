@@ -40,6 +40,14 @@
   display: none;
 }
 
+.responsive-login{
+  display: none;
+}
+
+.responsive-nav-user-info{
+  display: none;
+}
+
 @media(max-width: 930px){
   .nav{
     
@@ -93,5 +101,49 @@
 @media(max-width: 810px){
   .mobile-options {
     font-size: 20px;
+  }
+}
+
+@media(max-width: 617px){
+  .nav{
+    justify-content: space-around;
+  }
+
+  .nav-login{
+    display: none;
+  }
+
+  .responsive-login{
+    display: initial;
+
+  }
+
+  .responsive-login button{
+    height: 40px;
+    width: 80px;
+    margin: 20px;
+  }
+
+  .mobile-options{
+    align-items: flex-start;
+    font-size: 15px;
+  }
+}
+
+@media(max-width: 375px){
+  .responsive-login button{
+    width: 70px;
+  }
+
+  .mobile-menu{
+    height: 50vh;
+    width: 100vw;
+  }
+
+  .mobile-options{
+    height: 50vh;
+    width: 100vw;
+    align-items: center;
+    font-size: 30px;
   }
 }

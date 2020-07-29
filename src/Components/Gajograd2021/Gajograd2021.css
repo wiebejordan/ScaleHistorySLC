@@ -49,4 +49,29 @@
 
 .button-box button{
   height: 50px;
+  margin: 20px;
+}
+
+@media(max-width: 706px){
+  .container img{
+    height: 291px;
+    width: 400px;
+    
+  }
+}
+
+@media(max-width: 536px){
+  .container{
+    width: 100vw;
+  }
+
+  .container header{
+    font-size: 30px;
+  }
+
+  .container img{
+    height: 218px;
+    width: 300px;
+  }
+
 }

@@ -23,12 +23,61 @@
   
 }
 
-.blogpost{
+.main-container iframe{
+  height: 315px;
+  width: 560px;
+}
 
+.blogpost{
   margin-top: 50px; 
+  
 }
 
 .blogpost img{
   width: 550px;
   height: 347px;
+}
+
+@media(max-width: 706px){
+  .main-container iframe{
+    height: 225px;
+    width: 400px;
+  }
+
+  .blogpost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blogpost h2{
+    font-size: 20px;
+  }
+
+  .blogpost img{
+    height: 225px;
+    width: 400px;
+    
+  }
+
+  @media(max-width: 536px){
+    .main-container{
+      width: 100vw;
+    }
+
+    .main-container iframe{
+      height: 169px;
+      width: 300px;
+    }
+
+    .blogpost img{
+      height: 169px;
+      width: 300px;
+      
+    }
+
+    .blogpost h2{
+      font-size: 15px;
+    }
+  }
 }

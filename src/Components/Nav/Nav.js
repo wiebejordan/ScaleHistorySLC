@@ -85,7 +85,7 @@ class Nav extends Component{
         {this.state.dropdownView
         ?(
           <nav className='mobile-menu'>
-            <span className='mobile-options'>
+            <span className='mobile-options' onClick={this.toggleDropdown}>
           <Link to='/'><nav>Home</nav></Link>
 
           <nav>Videos</nav>
@@ -124,6 +124,7 @@ class Nav extends Component{
         or
 
         <Link to='/userregister'><button>Sign up!</button></Link>
+
         </div>)
 
         :(
@@ -136,6 +137,16 @@ class Nav extends Component{
         <button onClick={this.logout}>Logout</button>
         </div>)}
         
+        {!this.props.user.username
+        ?(
+        <div className='responsive-login'>
+        <button onClick={this.handleLogin}>Login</button>
+        
+        or
+
+        <Link to='/userregister'><button>Sign up!</button></Link>
+        </div>)
+        :null}
         
       </div>
     )
