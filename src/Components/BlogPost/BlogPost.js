@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import '../BlogPost/BlogPost.css';
 
-const BlogPost = () => {
+
+const BlogPost = ({ match }) => {
   const [title, setTitle] = useState(''),
         [image, setImage] = useState(''),
         [content, setContent] = useState(''),
@@ -11,8 +12,10 @@ const BlogPost = () => {
         [profileImg, setProfileImg] = useState('');
 
   useEffect(() => {
-  
-    axios.get(`/api/blogpost/2`)
+    console.log(match);
+    
+    if(match.params.postid){
+    axios.get(`/api/blogpost/${match.params.postid}`)
     .then(res => {
       setTitle(res.data[0].title);
       setImage(res.data[0].img);
@@ -20,9 +23,10 @@ const BlogPost = () => {
       setUsername(res.data[0].username);
       setProfileImg(res.data[0].profile_img);
     })
-    
+    }
   })
 
+  
   return (
     <div className='blogpost-main'>
       <div className='blogpost-container'>
@@ -38,8 +42,8 @@ const BlogPost = () => {
         </div>
     </div>
   )
-
+  
 }
-const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps)(BlogPost);
+
+export default withRouter(BlogPost);

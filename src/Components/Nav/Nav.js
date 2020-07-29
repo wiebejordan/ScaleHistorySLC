@@ -57,8 +57,9 @@ class Nav extends Component{
   }
 
   toggleDropdown = () => {
+    if(this.state.dropdownLogin !== true){
     this.setState({dropdownView: !this.state.dropdownView});
-    
+    }
   }
 
   toggleLoginDropdown = () => {

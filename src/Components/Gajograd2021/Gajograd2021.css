@@ -64,14 +64,25 @@
   .container{
     width: 100vw;
   }
-
+  
   .container header{
     font-size: 30px;
+    margin-top: 25px;
   }
 
   .container img{
     height: 218px;
     width: 300px;
+  }
+
+  .button-box{
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .button-box button{
+    margin: 10px;
   }
 
 }

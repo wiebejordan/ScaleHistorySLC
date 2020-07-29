@@ -34,3 +34,35 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@media(max-width: 414px){
+  .event-reg-main{
+    font-size: 30px;
+  }
+
+  
+
+  .event-reg-main input{
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .event-reg-main button{
+    height: 75px;
+    width: 200px;
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  .event-reg-main form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .checkmark{
+    height: 35px;
+    width: 35px;
+  }
+}

@@ -92,16 +92,19 @@ class EventRegister extends Component{
         <form>
           <div className="radio">
             <label>
-              <input type="radio" value="allies" checked={this.state.selectedOption === 'allies'}
+              <input className="checkmark"
+               type="radio" value="allies" checked={this.state.selectedOption === 'allies'}
               onChange={this.handleOptionChange} />
+              
             Allies
             </label>
           </div>
     
           <div className="radio">
             <label>
-              <input type="radio" value="axis" checked={this.state.selectedOption === 'axis'}
+              <input className="checkmark" type="radio" value="axis" checked={this.state.selectedOption === 'axis'}
               onChange={this.handleOptionChange}/>
+              
             Axis
             </label>
           </div>

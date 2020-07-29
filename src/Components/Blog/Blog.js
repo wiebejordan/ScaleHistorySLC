@@ -28,7 +28,7 @@ class Blog extends Component {
       const mappedPosts = this.state.posts.map((post, i) => (
 
         <Link to={`/blogpost/${post.post_id}`}>
-        <div key={i} className='post-box'>
+        <div key={i} post={post}  className='post-box'>
             
           <div className='post-author'>
             <p className='post-title'>{post.title}</p>
