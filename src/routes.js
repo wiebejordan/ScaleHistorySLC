@@ -8,6 +8,8 @@ import Profile from './Components/Profile/Profile';
 import Allies from './Components/Allies/Allies';
 import Axis from './Components/Axis/Axis';
 import Blog from './Components/Blog/Blog';
+import BlogPost from './Components/BlogPost/BlogPost';
+import Gajograd2020 from './Components/Gajograd2020/Gajograd2020';
 
 export default (
   <Switch>
@@ -19,5 +21,7 @@ export default (
     <Route path='/commandroom/allies' component={Allies}/>
     <Route path='/commandroom/axis' component={Axis}/>
     <Route path='/blog' component={Blog}/>
+    <Route path='/blogpost/:postid' component={BlogPost}/>
+    <Route path='/Gajograd2020' component={Gajograd2020}/>
   </Switch>
 );

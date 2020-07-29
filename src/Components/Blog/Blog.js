@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-dom';
 import '../Blog/Blog.css';
+import {Link} from 'react-router-dom';
 
 class Blog extends Component {
     constructor(props){
@@ -25,6 +26,8 @@ class Blog extends Component {
 
     render(){
       const mappedPosts = this.state.posts.map((post, i) => (
+
+        <Link to={`/blogpost/${post.post_id}`}>
         <div key={i} className='post-box'>
             
           <div className='post-author'>
@@ -37,6 +40,8 @@ class Blog extends Component {
 
           <img className='post-image' src={post.img}/>
         </div>
+        </Link>
+
       ))
       return(
         <div className='blog-main'>
