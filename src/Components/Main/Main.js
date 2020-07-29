@@ -22,8 +22,9 @@ class Main extends Component{
 
         <div className='blogpost'>
         <h2>Current Project - OSS Deer Team - 7/21/2020</h2>
+        <Link to='/blogpost/2'>
         <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Ho_Chi_Minh_%28third_from_left_standing%29_and_the_OSS_in_1945.jpg'/>
-        <p></p>
+        </Link>
         </div>
         </div>
       </div>

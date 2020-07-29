@@ -1,0 +1,36 @@
+.event-reg-main{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://www.americanyawp.com/reader/wp-content/uploads/WWII-Posters.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.event-reg-container {
+  height: 400px;
+  width: 400px;
+  background-color: cadetblue;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.event-reg-container header{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.player-info{
+  height: 300px;
+  width: 350px;
+  /* background-color: rgba(22, 22, 22, 0.7); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

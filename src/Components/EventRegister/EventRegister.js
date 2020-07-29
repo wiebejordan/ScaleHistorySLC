@@ -1,6 +1,7 @@
 import React, {Component, Profiler} from 'react';
 import Axios from 'axios';
 import {connect} from 'react-redux';
+import '../EventRegister/EventRegister.css';
 
 class EventRegister extends Component{
     constructor(props){
@@ -39,7 +40,14 @@ class EventRegister extends Component{
 
     handleEventRegister = () => {
       const {player_id, name, side, faction, payed} = this.state;
-
+      
+      if(this.state.name === ''){
+        alert('Please enter your name');
+      }
+      else if(this.state.faction === ''){
+        alert('please enter your faction');
+      }
+      else{
         Axios.post('/api/playerregister', {player_id: this.props.user.user_id, name: this.state.name, side: this.state.selectedOption, faction: this.state.faction, payed: this.state.payed})
         .then(() => { alert('You are now registered for Gajograd 2021! Head to the Command Room to plan with your teammates!')
           
@@ -50,10 +58,11 @@ class EventRegister extends Component{
         .then(() => this.props.history.push(`/Gajograd2021`))
         .catch(err => console.log(err))
 
-        Axios.post('/');
+        // Axios.post('/');
+        this.props.history.push('/Gajograd2021')
 
         this.handleRegisterEmail();
-        
+        }
       }
 
       handleRegisterEmail = () => {
@@ -61,20 +70,23 @@ class EventRegister extends Component{
         .then(res => {})
         .catch(err => console.log(err))
       }
+    
       
     
 
 
   render(){
     return(
-      <div>
-        EventRegister
+      <div className='event-reg-main'>
+        <div className='event-reg-container'>
+        <header>Gajograd 2021 Register</header>
 
-        Name: <input
+        <div className='player-info'>
+        <input
         name='name'
         value={this.state.name}
         onChange={e => this.handleInput(e)}
-        placeholder='name'
+        placeholder='enter name'
         />
 
         <form>
@@ -97,7 +109,7 @@ class EventRegister extends Component{
 
   
 
-        Faction: <input
+        <input
         name='faction'
         value={this.state.faction}
         onChange={e => this.handleInput(e)}
@@ -106,8 +118,8 @@ class EventRegister extends Component{
 
         <button onClick={this.handleEventRegister}>Register for Gajograd 2021</button>
         
-        
-
+        </div>
+        </div>
       </div>
     )
   }

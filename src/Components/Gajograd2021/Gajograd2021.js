@@ -30,7 +30,13 @@ class Gajograd2021 extends Component{
         <br/>
         Gajograd is a Bolt Action event with an Axis vs Allies format. Players will register before the event for either side, and then create a force consisting of 800 points. Individual scores will be tracked, but each player’s combined scores will be totaled and one team will claim victory! 
         <br/>
-        There will be 3 games, followed by prizes for the winning team, best Axis and best Allied general, and more!</section>
+        There will be 3 games, followed by prizes for the winning team, best Axis and best Allied general, and more!
+        <br/>
+        <section>
+        Read about last year's event <Link to='/Gajograd2020'>here</Link>.
+        </section>
+         
+        </section>
 
         
         <div className='button-box'>

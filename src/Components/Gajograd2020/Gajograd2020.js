@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Document, Page } from "react-pdf/dist/entry.webpack";
 import GG from '../GG.pdf'
+import './Gajograd2020.css';
 
 
 
@@ -26,7 +27,7 @@ const Gajograd2020 = () => {
   }
 
   return (
-    <>
+    <div className='GG-main'>
       <Document
         file={GG}
         onLoadSuccess={onDocumentLoadSuccess}
@@ -52,7 +53,7 @@ const Gajograd2020 = () => {
           Next
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

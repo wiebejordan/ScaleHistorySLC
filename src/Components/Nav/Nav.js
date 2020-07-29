@@ -11,7 +11,8 @@ class Nav extends Component{
 
       this.state = {
         username: '',
-        password: ''
+        password: '',
+        dropdownView: false
       }
       
     }
@@ -54,6 +55,11 @@ class Nav extends Component{
     })
   }
 
+  toggleDropdown = () => {
+    this.setState({dropdownView: !this.state.dropdownView});
+    
+  }
+
   render(){
     return(
       <div className='nav'>
@@ -70,6 +76,31 @@ class Nav extends Component{
           
           <nav>Order Dice App</nav>
         </div>
+
+        <div className='dropdown' onClick={this.toggleDropdown}>
+          <span>Menu</span>
+
+        </div>
+
+        {this.state.dropdownView
+        ?(
+          <nav className='mobile-menu'>
+            <span className='mobile-options'>
+          <Link to='/'><nav>Home</nav></Link>
+
+          <nav>Videos</nav>
+
+          <Link to='/blog'><nav>Blog</nav></Link>
+          
+
+          <Link to='/Gajograd2021'><nav>GajoGrad Event</nav></Link>
+          
+          <nav>Order Dice App</nav>
+          </span>
+          </nav>
+        )
+        
+        :null}
         
         {!this.props.user.username
         ?(

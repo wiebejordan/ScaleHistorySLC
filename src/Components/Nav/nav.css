@@ -28,3 +28,70 @@
   align-items: center;
 }
 
+.dropdown {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-options {
+  display: none;
+}
+
+@media(max-width: 930px){
+  .nav{
+    
+    justify-content: space-around;
+  }
+
+  .nav-links{
+    display: none;
+  }
+
+  .dropdown{
+    display: initial;
+    height: 40px;
+    width: 70px;
+    font-size: 30px;
+    margin-right: 40px;
+  }
+
+  .mobile-menu{
+    display: initial;
+    box-sizing: border-box;
+    height: 250px;
+    width: 25vw;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    background-color:rgba(255, 255, 255, 0.9) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    font-weight: lighter;
+  }
+
+  .mobile-options {
+    height: 250px;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 30px;
+    font-weight: normal;
+    z-index: 2;
+    color: grey;
+    
+  }
+}
+
+@media(max-width: 810px){
+  .mobile-options {
+    font-size: 20px;
+  }
+}
