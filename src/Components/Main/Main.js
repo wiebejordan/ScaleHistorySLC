@@ -26,6 +26,9 @@ class Main extends Component{
         <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Ho_Chi_Minh_%28third_from_left_standing%29_and_the_OSS_in_1945.jpg'/>
         </Link>
         </div>
+
+        <h1>Metal Miniatures</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lZwVMogfAos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     )

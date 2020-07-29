@@ -30,7 +30,7 @@
   width: 500px;
   color: white;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: 20px;
 }
@@ -50,4 +50,25 @@
   border: 1px solid white;
 }
 
+@media(max-width: 706px){
+  .blogpost-container header{
+    font-size: 30px;
+  }
+
+  .blogpost-image{
+    height: 320px;
+    width: 400px;
+  }
+}
+
+@media(max-width: 530px){
+  .blogpost-container{
+    width: 100vw;
+  }
+
+  .blogpost-image{
+    height: 240px;
+    width: 300px;
+  }
+}
 

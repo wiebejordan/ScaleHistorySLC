@@ -12,7 +12,8 @@ class Nav extends Component{
       this.state = {
         username: '',
         password: '',
-        dropdownView: false
+        dropdownView: false,
+        dropdownLogin: false
       }
       
     }
@@ -58,6 +59,25 @@ class Nav extends Component{
   toggleDropdown = () => {
     this.setState({dropdownView: !this.state.dropdownView});
     
+  }
+
+  toggleLoginDropdown = () => {
+    if(this.state.dropdownView !== true){
+    this.setState({dropdownLogin: !this.state.dropdownLogin});
+    }
+  }
+
+  handleDropdownLogin = () => {
+    const {username, password} = this.state;
+
+    axios.post('/auth/login', {username, password})
+    .then(res => {
+      this.props.getUser(res.data);
+      this.toggleLoginDropdown();
+      alert(`Welcome ${this.props.user.username}!`);
+
+    })
+    .catch(err => console.log(err))
   }
 
   render(){
@@ -140,7 +160,7 @@ class Nav extends Component{
         {!this.props.user.username
         ?(
         <div className='responsive-login'>
-        <button onClick={this.handleLogin}>Login</button>
+        <button onClick={this.toggleLoginDropdown}>Login</button>
         
         or
 
@@ -148,6 +168,26 @@ class Nav extends Component{
         </div>)
         :null}
         
+        {this.state.dropdownLogin
+        ?(
+          <div className='dropdown-login'>
+        Username: <input
+        name='username'
+        value={this.state.username}
+        onChange={e => this.handleInput(e)}
+        placeholder='enter username'
+        />
+
+        Password: <input
+        name='password'
+        value={this.state.password}
+        onChange={e => this.handleInput(e)}
+        placeholder='enter password'
+        />
+
+        <button onClick={this.handleDropdownLogin}>Login</button>
+        </div>)
+        :null}
       </div>
     )
   }

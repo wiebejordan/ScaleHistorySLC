@@ -68,3 +68,54 @@
   font-weight: bold;
   font-size: 30px;
 }
+
+@media(max-width: 706px){
+  .post-box{
+    width: 400px;
+  }
+
+  .post-author{
+    width: 400px;
+  }
+
+  .post-title{
+    font-size: 20px;
+  }
+
+  .post-image{
+    height: 320px;
+    width:400px;
+
+  }
+
+  @media(max-width: 536px){
+    .blog-container{
+      width: 100vw;
+    }
+  }
+
+  @media(max-width: 454px){
+    .post-box{
+      width: 300px;
+    }
+  
+    .post-author{
+      width: 300px;
+    }
+  
+    .post-title{
+      font-size: 12px;
+    }
+
+    .user-image{
+      height: 40px;
+      width: 40px;
+    }
+  
+    .post-image{
+      height: 240px;
+      width:300px;
+  
+    }
+  }
+}
