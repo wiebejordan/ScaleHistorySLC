@@ -57,10 +57,7 @@ class UserRegister extends Component{
         <div className='UR-container'>
         <h1>USER REGISTER</h1>
         <img src={this.state.profile_img}
-        style={{
-          height: '100px',
-          width: '100px',
-        }}/>
+        />
 
         Username: <input
         name='username'

@@ -4,6 +4,7 @@ import {Link, withRouter} from 'react-router-dom';
 import {getUser, clearUser} from '../../redux/authReducer';
 import '../Nav/nav.css';
 import axios from 'axios';
+import hamburger from '../Nav/hamburger.png';
 
 class Nav extends Component{
     constructor(props){
@@ -98,38 +99,30 @@ class Nav extends Component{
 
   render(){
     return(
+      <div>
       <div className='nav'>
-        
-        <div className='nav-links'>
-          <Link to='/'><nav>Home</nav></Link>
-
-          <nav>Videos</nav>
-
-          <Link to='/blog'><nav>Blog</nav></Link>
-          
-
-          <Link to='/Gajograd2021'><nav>GajoGrad Event</nav></Link>
-          
-          <nav>Order Dice App</nav>
+        <div className='nav-title'>
+        <h1>SCALE HISTORY SLC</h1>
+        <p>'Putting the "able" back in tabletop standard!'</p>
         </div>
 
         <div className='dropdown' onClick={this.toggleDropdown}>
-          <span>Menu</span>
-
+          <nav>SHSLC</nav>
+          <img src={hamburger}/>
         </div>
 
         {this.state.dropdownView
         ?(
           <nav className='mobile-menu'>
             <span className='mobile-options' onClick={this.toggleDropdown}>
-          <Link to='/'><nav>Home</nav></Link>
+          <Link className='Links' to='/'><nav>Home</nav></Link>
 
           <nav>Videos</nav>
 
-          <Link to='/blog'><nav>Blog</nav></Link>
+          <Link className='Links' to='/blog'><nav>Blog</nav></Link>
           
 
-          <Link to='/Gajograd2021'><nav>GajoGrad Event</nav></Link>
+          <Link className='Links' to='/Gajograd2021'><nav>GajoGrad Event</nav></Link>
           
           <nav>Order Dice App</nav>
           </span>
@@ -159,7 +152,7 @@ class Nav extends Component{
         
         or
 
-        <Link to='/userregister'><button>Sign up!</button></Link>
+        <Link  to='/userregister'><button>Sign up!</button></Link>
 
         </div>)
 
@@ -167,7 +160,7 @@ class Nav extends Component{
         
         <div className='nav-user-info'>
         <p>Welcome,</p>
-        <Link to={`/profile/${this.props.user.user_id}`}>
+        <Link className='Links' to={`/profile/${this.props.user.user_id}`}>
         <nav> {this.props.user.username}</nav>
         </Link>
         <button onClick={this.logout}>Logout</button>
@@ -204,6 +197,21 @@ class Nav extends Component{
         <button onClick={this.handleDropdownLogin}>Login</button>
         </div>)
         :null}
+
+        
+      </div>
+      <div className='nav-links'>
+          <Link className='Links' to='/'><nav>Home</nav></Link>
+
+          <nav>Videos</nav>
+
+          <Link className='Links' to='/blog'><nav>Blog</nav></Link>
+          
+
+          <Link className='Links' to='/Gajograd2021'><nav>GajoGrad Event</nav></Link>
+          
+          <nav>Order Dice App</nav>
+        </div>
       </div>
     )
   }

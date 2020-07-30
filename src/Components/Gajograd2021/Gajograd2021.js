@@ -33,7 +33,7 @@ class Gajograd2021 extends Component{
         There will be 3 games, followed by prizes for the winning team, best Axis and best Allied general, and more!
         <br/>
         <section>
-        Read about last year's event <Link to='/Gajograd2020'>here</Link>.
+        Read about last year's event <Link className='gg2020-link' to='/Gajograd2020'>here</Link>.
         </section>
          
         </section>

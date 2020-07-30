@@ -38,6 +38,10 @@
   height: 347px;
 }
 
+.bottom-video{
+  margin-bottom: 100px;
+}
+
 @media(max-width: 706px){
   .main-container iframe{
     height: 225px;
