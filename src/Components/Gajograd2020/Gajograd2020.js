@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { Document, Page } from "react-pdf/dist/entry.webpack";
+import { Document, Page, } from "react-pdf/dist/entry.webpack";
 import GG from '../GG.pdf'
 import './Gajograd2020.css';
+
 
 
 

@@ -28,13 +28,20 @@ class Nav extends Component{
 
   handleLogin = () => {
     const {username, password} = this.state;
-
+    if(this.state.username === ''){
+      alert('please enter your username')
+    }
+    else if(this.state.password === ''){
+      alert('please enter your password')
+    }
+    else{
     axios.post('/auth/login', {username, password})
     .then(res => {
       this.props.getUser(res.data);
       alert(`Welcome ${this.props.user.username}!`);
     })
     .catch(err => console.log(err))
+    }
   }
 
 
@@ -60,11 +67,19 @@ class Nav extends Component{
     if(this.state.dropdownLogin !== true){
     this.setState({dropdownView: !this.state.dropdownView});
     }
+    else if(this.state.dropdownLogin === true){
+      this.setState({dropdownLogin: !this.state.dropdownLogin});
+      this.setState({dropdownView: !this.state.dropdownView});
+    }
   }
 
   toggleLoginDropdown = () => {
     if(this.state.dropdownView !== true){
     this.setState({dropdownLogin: !this.state.dropdownLogin});
+    }
+    else if(this.state.dropdownView === true){
+      this.setState({dropdownView: !this.state.dropdownView});
+      this.setState({dropdownLogin: !this.state.dropdownLogin});
     }
   }
 

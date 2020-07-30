@@ -67,8 +67,8 @@ const  AxisChat = () => {
 
 
       </div>
-      <input value={message} onChange={handleChange} placeholder="say something"/>
-      <button onClick={sendMessage}>Send</button>
+      <input className='message-input' value={message} onChange={handleChange} placeholder="say something"/>
+      <button className='send-button' onClick={sendMessage}>Send</button>
     </div>
   );
 

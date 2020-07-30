@@ -71,7 +71,7 @@ const  AlliesChat = () => {
 
       </div>
       <input className='message-input' value={message} onChange={handleChange} placeholder="say something"/>
-      <button onClick={sendMessage}>Send</button>
+      <button className='send-button' onClick={sendMessage}>Send</button>
     </div>
   );
 

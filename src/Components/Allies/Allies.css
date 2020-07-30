@@ -41,3 +41,37 @@
   border-radius: 50%;
 }
 
+@media(max-width: 825px){
+  .player-container{
+    width: 600px;
+  }
+
+  .player-chart{
+    width: 600px;
+  }
+}
+
+@media(max-width: 617px){
+  .player-container{
+    width: 400px;
+  }
+
+  .player-chart{
+    width: 400px;
+  }
+}
+
+@media(max-width: 414px){
+  .allies-container h1{
+    font-size: 25px;
+  }
+
+  .player-container{
+    width: 300px;
+    font-size: 15px;
+  }
+
+  .player-chart{
+    width: 300px;
+  }
+}

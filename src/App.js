@@ -4,6 +4,7 @@ import {Link, withRouter} from 'react-router-dom';
 import './App.css';
 import routes from './routes';
 import Nav from './Components/Nav/Nav';
+import Footer from './Components/Footer/Footer';
 
 class App extends Component{
   
@@ -16,6 +17,7 @@ class App extends Component{
       )
       :null}
       {routes}
+      <Footer/>
     </div>
   );
   }
