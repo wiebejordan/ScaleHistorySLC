@@ -1,5 +1,6 @@
-import React, {Component, Profiler} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {clearUser} from '../../redux/authReducer';
 import axios from 'axios';
 import '../Profile/Profile.css';
 
@@ -9,9 +10,18 @@ class Profile extends Component{
     axios.delete(`/auth/delete/${this.props.user.user_id}`)
     .then(() => {
       this.props.history.push('/')
+      this.logout()
       alert('your account has been deleted');
     })
     .catch(err => console.log(err))
+  }
+
+  logout = () => {
+    axios.post('/auth/logout')
+    .then(() => {
+      this.props.clearUser();
+      this.props.history.push('/');
+    })
   }
 
 
@@ -36,5 +46,5 @@ class Profile extends Component{
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, {clearUser})(Profile);
 

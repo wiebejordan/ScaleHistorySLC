@@ -4,7 +4,8 @@ const initialState = {
     profileImg: '',
     side: '',
     email: '',
-    user_id: null
+    user_id: null,
+    isadmin: false
   }
 }
 

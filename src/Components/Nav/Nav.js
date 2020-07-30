@@ -111,6 +111,7 @@ class Nav extends Component{
           <img src={hamburger}/>
         </div>
 
+        {/* Drop Down Menu **********************************************/}
         {this.state.dropdownView
         ?(
           <nav className='mobile-menu'>
@@ -130,80 +131,92 @@ class Nav extends Component{
         )
         
         :null}
+
+        {/* ***************************************************** */}
         
+        {/* Displays login inputs or Username if logged in ******* */}
+
         {!this.props.user.username
         ?(
-        <div className='nav-login'>
-        Username: <input
-        name='username'
-        value={this.state.username}
-        onChange={e => this.handleInput(e)}
-        placeholder='enter username'
-        />
+          <div className='nav-login'>
+            Username: <input
+            name='username'
+            value={this.state.username}
+            onChange={e => this.handleInput(e)}
+            placeholder='enter username'
+            />
 
-        Password: <input
-        name='password'
-        value={this.state.password}
-        onChange={e => this.handleInput(e)}
-        placeholder='enter password'
-        />
+            Password: <input
+            name='password'
+            value={this.state.password}
+            onChange={e => this.handleInput(e)}
+            placeholder='enter password'
+            />
 
-        <button onClick={this.handleLogin}>Login</button>
+            <button onClick={this.handleLogin}>Login</button>
         
-        or
+            or
 
-        <Link  to='/userregister'><button>Sign up!</button></Link>
+            <Link  to='/userregister'><button>Sign up!</button></Link>
 
-        </div>)
+            </div>)
 
         :(
         
-        <div className='nav-user-info'>
-        <p>Welcome,</p>
-        <Link className='Links' to={`/profile/${this.props.user.user_id}`}>
-        <nav> {this.props.user.username}</nav>
-        </Link>
-        <button onClick={this.logout}>Logout</button>
-        </div>)}
-        
+          <div className='nav-user-info'>
+            <p>Welcome,</p>
+            <Link className='nav-username' to={`/profile/${this.props.user.user_id}`}>
+            <nav> {this.props.user.username}</nav>
+            </Link>
+            <button onClick={this.logout}>Logout</button>
+            </div>)}
+        {/* ************************************************************* */}
+
+        {/* Displays login buttons for mobile devices ******************  */}
         {!this.props.user.username
         ?(
-        <div className='responsive-login'>
-        <button onClick={this.toggleLoginDropdown}>Login</button>
+          
+          <div className='responsive-login'>
+            <button onClick={this.toggleLoginDropdown}>Login</button>
         
-        or
+            or
 
-        <Link to='/userregister'><button>Sign up!</button></Link>
-        </div>)
+            <Link to='/userregister'><button>Sign up!</button></Link>
+            </div>)
         :null}
-        
+        {/* ************************************************************** */}
+
+        {/* Displays mobile login dropdown *********************************/}
         {this.state.dropdownLogin
         ?(
           <div className='dropdown-login'>
-        Username: <input
-        name='username'
-        value={this.state.username}
-        onChange={e => this.handleInput(e)}
-        placeholder='enter username'
-        />
+            Username: <input
+            name='username'
+            value={this.state.username}
+            onChange={e => this.handleInput(e)}
+            placeholder='enter username'
+          />
 
-        Password: <input
-        name='password'
-        value={this.state.password}
-        onChange={e => this.handleInput(e)}
-        placeholder='enter password'
-        />
+            Password: <input
+            name='password'
+            value={this.state.password}
+            onChange={e => this.handleInput(e)}
+            placeholder='enter password'
+          />
 
-        <button onClick={this.handleDropdownLogin}>Login</button>
+            <button onClick={this.handleDropdownLogin}>Login</button>
         </div>)
         :null}
 
         
       </div>
+      {/* ******************************************************************* */}
+
+      {/* desktop menu display */}
       <div className='nav-links'>
           <Link className='Links' to='/'><nav>Home</nav></Link>
 
-          <nav>Videos</nav>
+          <a className='Links' href='https://www.youtube.com/channel/UCyI414P63CYsD1c5UuXGZBw?view_as=subscriber'><nav>Videos</nav></a>
 
           <Link className='Links' to='/blog'><nav>Blog</nav></Link>
           

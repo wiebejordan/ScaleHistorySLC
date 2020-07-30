@@ -18,3 +18,13 @@
 .footer-main p{
   font-size: 10px;
 }
+
+@media(max-width: 456px){
+  .footer-main a{
+    font-size: 12px;
+  }
+
+  .footer-main nav{
+    font-size: 12px;
+  }
+}

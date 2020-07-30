@@ -24,6 +24,10 @@
   font-weight: bold;
 }
 
+.blog-container button{
+  margin: 20px;
+}
+
 .post-box{
   height: auto;
   width: 500px;
@@ -39,7 +43,7 @@
   width: 500px;
   border: 1px solid white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   background-color: rgb(58, 109, 28);
 
@@ -76,6 +80,7 @@
 
   .post-author{
     width: 400px;
+    justify-content: space-around;
   }
 
   .post-title{

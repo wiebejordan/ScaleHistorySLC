@@ -10,6 +10,7 @@ import Axis from './Components/Axis/Axis';
 import Blog from './Components/Blog/Blog';
 import BlogPost from './Components/BlogPost/BlogPost';
 import Gajograd2020 from './Components/Gajograd2020/Gajograd2020';
+import NoMatchPage from './Components/NoMatchPage/NoMatchPage';
 
 export default (
   <Switch>
@@ -23,5 +24,6 @@ export default (
     <Route path='/blog' component={Blog}/>
     <Route path='/blogpost/:postid' component={BlogPost}/>
     <Route path='/Gajograd2020' component={Gajograd2020}/>
+    <Route component={NoMatchPage}/>
   </Switch>
 );

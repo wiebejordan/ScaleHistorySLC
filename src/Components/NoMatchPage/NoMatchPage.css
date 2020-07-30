@@ -1,0 +1,15 @@
+.nomatch{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://www.historyhit.com/wp-content/uploads/2015/03/bits_of_careless_talk_are_pieced_together_by_the_enemy.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nomatch h1{
+  background-color: white;
+  margin: 0;
+
+}

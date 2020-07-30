@@ -30,7 +30,7 @@ module.exports = {
         subject: 'Welcome to ScaleHistorySLC!',
         text: 'Welcome to ScaleHistorySLC!',
         html: `<div>Glad to have you on board with ScaleHistorySLC! Check out our upcoming Gajograd 2021 Bolt Action event! </div>
-               <img src="https://launch.battlefront.co.nz/wp-content/uploads/Stalingrad-artwork.jpeg"/>`,
+               <img src="https://www.forces.net/sites/default/files/styles/cover_image/public/Battle%20of%20Kursk%20picture.jpg?itok=9H1hk7Wc"/>`,
         
     });
     console.log("Message sent: %s", info.messageId);

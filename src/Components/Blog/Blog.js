@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {connect} from 'react-dom';
+import {connect} from 'react-redux';
 import '../Blog/Blog.css';
 import {Link} from 'react-router-dom';
 
@@ -27,7 +27,7 @@ class Blog extends Component {
     render(){
       const mappedPosts = this.state.posts.map((post, i) => (
 
-        <Link to={`/blogpost/${post.post_id}`}>
+        <Link className='Links' to={`/blogpost/${post.post_id}`}>
         <div key={i} post={post}  className='post-box'>
             
           <div className='post-author'>
@@ -47,6 +47,11 @@ class Blog extends Component {
         <div className='blog-main'>
           <div className='blog-container'>
             <header>Blog</header>
+
+            {this.props.user.isadmin === true
+            ?(<button>New Post</button>)
+            :null}
+
             {mappedPosts}
           </div>
         </div>
@@ -56,4 +61,6 @@ class Blog extends Component {
 
 }
 
-export default Blog;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps)(Blog);

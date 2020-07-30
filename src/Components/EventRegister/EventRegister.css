@@ -12,7 +12,8 @@
 .event-reg-container {
   height: 400px;
   width: 400px;
-  background-color: cadetblue;
+  background: rgb(176,190,169);
+  background: linear-gradient(102deg, rgba(176,190,169,1) 0%, rgba(241,247,231,1) 100%);
   margin-bottom: 200px;
   display: flex;
   flex-direction: column;
