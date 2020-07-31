@@ -1,117 +1,46 @@
 .chat-container{
+  height: 400px;
+  width: 800px;
   display: flex;
   flex-direction: column;
-  height: 300px;
-  max-height: 500px;
-  overflow: auto;
-  width: 800px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  padding-bottom: 10px;
-  margin-top: 25px;
-
+  align-items: center;
+  background-color: cadetblue;
 }
 
+
 .chat-window{
-  width: 98%;
-  height: 320px;
-  border-radius: 10px;
-  margin-top: 10px;
-  padding-left: 10px;
-  padding-top: 10px;
-  font-size: 17px;
-  background-color: transparent;
-  border: 1px solid lightgray;
-  outline: none;
-  color: lightgray;
-  letter-spacing: 1px;
-  line-height: 20px;
+  height: 200px;
+  width: 775px;
+  background-color: black;
+  overflow: scroll;
+  font-weight: 500;
+  font-size: 12px;
 }
 
 .my-row{
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .my-message{
-  width: 45%;
-  background-color: cadetblue;
-  color: white;
-  padding: 10px;
-  margin-right: 5px;
-  text-align: center;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
+  margin-left: 10px;
 }
 
-.partner-row{
-  justify-content: flex-start;
+.chat-inputs{
+  width: 800px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.partner-message{
-  width: 45%;
-  background-color: transparent;
-  color: lightgray;
-  border: 1px solid lightgray;
-  padding: 10px;
-  margin-left: 5px;
-  text-align: center;
-  border-top-left-radius: 10%;
-  border-bottom-left-radius: 10%;
+.chat-name{
+  width: 100px;
 }
 
-.message-input{
-  width: 710px;
+.chat-message{
+  width:500px;
 }
 
-.send-button{
-  width: 85px;
-}
-
-@media(max-width: 825px){
-  .chat-container{
-    width: 600px;
-  }
-
-  .message-input{
-    width: 530px;
-  }
-
-  .send-button{
-    width: 65px;
-  }
-}
-
-@media(max-width: 617px){
-  .chat-container{
-    width: 400px;
-  }
-
-  .message-input{
-    width: 300px;
-  }
-
-  .send-button{
-    width: 95px;
-  }
-}
-
-@media(max-width: 414px){
-  .chat-container{
-    width: 300px;
-  }
-
-  .message-input{
-    width: 200px;
-    height: 50px;
-  }
-
-  .send-button{
-    width: 95px;
-    height: 55px;
-    
-
-  }
+.chat-inputs button{
+  height: 38px;
 }

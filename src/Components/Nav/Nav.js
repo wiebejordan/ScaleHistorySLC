@@ -118,7 +118,7 @@ class Nav extends Component{
             <span className='mobile-options' onClick={this.toggleDropdown}>
           <Link className='Links' to='/'><nav>Home</nav></Link>
 
-          <nav>Videos</nav>
+          <a className='Links' href='https://www.youtube.com/channel/UCyI414P63CYsD1c5UuXGZBw?view_as=subscriber'><nav>Videos</nav></a>
 
           <Link className='Links' to='/blog'><nav>Blog</nav></Link>
           

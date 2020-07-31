@@ -6,6 +6,14 @@
   color: white;
 }
 
+.GG-main button{
+  margin-bottom: 25px;
+}
+
+.GG-container{
+  margin-top: 50px;
+}
+
 @media(max-width: 631px){
   
 }

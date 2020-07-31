@@ -65,15 +65,13 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
-  socket.emit('your id', socket.id);
-  socket.on('send message', (message) => {
-      io.emit("message", message)
+  socket.on('allies-message', ({name, message}) => {
+      io.emit('allies-message', {name, message})
   })
-  socket.on('send-nickname', nickname => {
-    socket.nickname = nickname;
-    users.push(socket.nickname);
-    console.log(users);
-  })
+  socket.on('axis-message', ({name, message}) => {
+    io.emit("axis-message", {name, message})
+})
+  
 }) 
 
 

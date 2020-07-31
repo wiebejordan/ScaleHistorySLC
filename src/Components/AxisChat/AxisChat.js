@@ -1,79 +1,84 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import io from 'socket.io-client'
 import '../AlliesChat/AlliesChat.css'
-import {connect} from 'react-redux';
+
+
+const socket = io.connect('http://localhost:5050');
 
 const  AxisChat = () => {
-  const [yourID, setYourID] = useState();
-  const [messages, setMessages] = useState([]);
-  const [message, setMessage] = useState("");
-
-  const socketRef = useRef();
+  const [state, setState] = useState({message: '', name: ''});
+  const [chat, setMessage] = useState([]);
 
   useEffect(() => {
-    socketRef.current = io.connect('/');
-
-    socketRef.current.on("your id", id => {
-      setYourID(id);
+    socket.on('axis-message', ({name, message}) => {
+      setMessage([...chat, {name, message}])
     })
+    console.log(state, chat)
 
-    socketRef.current.on("message", (message) => {
-      console.log("here");
-      receivedMessage(message);
-    })
-  }, []);
+  })
 
-  function receivedMessage(message) {
-    setMessages(oldMsgs => [...oldMsgs, message]);
+  const onTextChange = (e) => {
+    setState({...state, [e.target.name]: e.target.value})
   }
 
-  function sendMessage(e) {
-    e.preventDefault();
-    const messageObject = {
-      body: message,
-      id: yourID,
-    };
-    setMessage("");
-    socketRef.current.emit("send message", messageObject);
+  const onMessageSubmit = (e) => {
+    e.preventDefault()
+    const {name, message} = state
+    socket.emit('axis-message', {name, message});
+    setState({message: '', name });
   }
+  
+  const renderChat = () => {
+    return chat.map(({name, message}, i) => (
+      <div className='my-row' key={i}>
+        <div>
+          <h3>
+            {name}: <span className='my-message'>{message}</span>
+          </h3> 
+       </div> 
+    </div>
+    ))
+    
+  }
+  
 
-  function handleChange(e) {
-    setMessage(e.target.value);
-  }
+  
 
   return (
-    <div>
-      <div className='chat-container'>
-          <div className ='chat-window'>
-          {messages.map((message, index) => {
-          if (message.id === yourID) {
-            return (
-              <div className='my-row' key={index}>
-                <div className='my-message'>
-                  {message.body} 
-                </div>
-              </div>
-            )
-          }
-          return (
-            <div className='partner-row' key={index}>
-              <div className='partner-message'>
-                {message.body}
-              </div>
-            </div>
-          )
-        })}
-          </div>
-
-
+    <div className='chat-container'>
+      <h1>Messenger</h1>
+      <div className='chat-window'>
+        {renderChat()}
       </div>
-      <input className='message-input' value={message} onChange={handleChange} placeholder="say something"/>
-      <button className='send-button' onClick={sendMessage}>Send</button>
+      <div >
+      <form className='chat-inputs' onSubmit={onMessageSubmit}>
+        <div className='name-field'>
+          <textarea
+          className='chat-name'
+          name='name'
+          onChange={e => onTextChange(e)}
+          value={state.name}
+          placeholder='Name'
+          />
+        </div>
+        <div>
+          <textarea
+          className='chat-message'
+          name='message'
+          onChange={e => onTextChange(e)}
+          value={state.message}
+          placeholder='Message'
+          />
+        </div>
+        <button>Send Message</button>
+      </form>
+      </div>
     </div>
   );
 
 };
 
-const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps)(AxisChat);
+
+export default AxisChat;
+
