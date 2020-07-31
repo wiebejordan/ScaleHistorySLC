@@ -17,10 +17,14 @@ class Allies extends Component{
     }
 
   componentDidMount(){
-    // if(!this.props.user.side){
-    //   this.props.history.push('/Gajograd2021')
-    //   alert('please register for event to enter Command Room')
-    // }
+    if(!this.props.user.side){
+      this.props.history.push('/Gajograd2021')
+      alert('Please register for event to access Command Room')
+    }
+    else if(this.props.user.side !== 'allies'){
+      this.props.history.push('/Gajograd2021')
+      alert('No Spies!')
+    }
     this.getAllies();
   }
 

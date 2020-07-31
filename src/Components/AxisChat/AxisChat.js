@@ -1,19 +1,31 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useSelector} from 'react';
 import io from 'socket.io-client'
 import '../AlliesChat/AlliesChat.css'
+import {connect} from 'react-redux';
+
 
 
 const socket = io.connect('http://localhost:5050');
 
-const  AxisChat = () => {
-  const [state, setState] = useState({message: '', name: ''});
+const mapStateToProps = reduxState => reduxState;
+
+const  Axischat = (props) => {
+
+  
+  const [state, setState] = useState({message: '', name: props.user.username});
   const [chat, setMessage] = useState([]);
+  const prevMsg = []
 
   useEffect(() => {
     socket.on('axis-message', ({name, message}) => {
       setMessage([...chat, {name, message}])
     })
-    console.log(state, chat)
+    socket.addEventListener('allied-prev-messages', function(alliedMessages){
+      for(let i = 0; i < alliedMessages.length; i++){
+      prevMsg.prev(alliedMessages[i].message)
+      
+      }
+    })
 
   })
 
@@ -27,6 +39,9 @@ const  AxisChat = () => {
     socket.emit('axis-message', {name, message});
     setState({message: '', name });
   }
+
+  
+
   
   const renderChat = () => {
     return chat.map(({name, message}, i) => (
@@ -46,13 +61,13 @@ const  AxisChat = () => {
 
   return (
     <div className='chat-container'>
-      <h1>Messenger</h1>
+      <h1>Communications</h1>
       <div className='chat-window'>
         {renderChat()}
       </div>
       <div >
       <form className='chat-inputs' onSubmit={onMessageSubmit}>
-        <div className='name-field'>
+        {/* <div className='name-field'>
           <textarea
           className='chat-name'
           name='name'
@@ -60,7 +75,7 @@ const  AxisChat = () => {
           value={state.name}
           placeholder='Name'
           />
-        </div>
+        </div> */}
         <div>
           <textarea
           className='chat-message'
@@ -70,7 +85,7 @@ const  AxisChat = () => {
           placeholder='Message'
           />
         </div>
-        <button>Send Message</button>
+        <button>Send</button>
       </form>
       </div>
     </div>
@@ -80,5 +95,5 @@ const  AxisChat = () => {
 
 
 
-export default AxisChat;
+export default connect(mapStateToProps)(Axischat);
 

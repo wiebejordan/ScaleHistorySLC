@@ -60,20 +60,33 @@ app.post('/api/post/', postCtrl.newPost);
 
 //socket 
 
+const alliedMessages = [];
+const axisMessages = [];
+
 io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
+  console.log(alliedMessages)
+  io.emit('allies-prev-msg', alliedMessages)
+  io.addListener('allies-message', function(name, message){
+    alliedMessages.push({name, message});
+  })
   socket.on('allies-message', ({name, message}) => {
       io.emit('allies-message', {name, message})
   })
   socket.on('axis-message', ({name, message}) => {
     io.emit("axis-message", {name, message})
-})
+  })
   
 }) 
 
 
 
 server.listen(SERVER_PORT, () => console.log(`Crushing it on port ${SERVER_PORT}`));
+
+var messages = [];    
+io.sockets.addListener("connection", function(socket) {
+  socket.emit('chat-previous-messages', messages); //new code     
+  socket.addListener("chat-message", function(message, nickname) {
+    messages.push({message: message, nickname: nickname});  
+    io.sockets.emit("chat-message", message, nickname)
+   })
+})
