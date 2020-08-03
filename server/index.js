@@ -60,11 +60,12 @@ app.post('/api/post/', postCtrl.newPost);
 
 //socket 
 
-const alliedMessages = [];
 const axisMessages = [];
 
 io.on('connection', (socket) => {
-  console.log(alliedMessages)
+  const alliedMessages = [];
+  
+   
   io.emit('allies-prev-msg', alliedMessages)
   io.addListener('allies-message', function(name, message){
     alliedMessages.push({name, message});
@@ -74,6 +75,9 @@ io.on('connection', (socket) => {
   })
   socket.on('axis-message', ({name, message}) => {
     io.emit("axis-message", {name, message})
+  })
+  socket.on('global-message', ({name, message}) => {
+    io.emit('global-message', {name, message})
   })
   
 }) 

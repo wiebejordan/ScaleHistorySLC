@@ -123,7 +123,7 @@ class Nav extends Component{
           <Link className='Links' to='/blog'><nav>Blog</nav></Link>
           
 
-          <Link className='Links' to='/Gajograd2021'><nav>GajoGrad Event</nav></Link>
+          <Link className='Links' to='/Gajograd2021'><nav>Gajograd Event</nav></Link>
           
           <nav>Order Dice App</nav>
           </span>
@@ -221,7 +221,7 @@ class Nav extends Component{
           <Link className='Links' to='/blog'><nav>Blog</nav></Link>
           
 
-          <Link className='Links' to='/Gajograd2021'><nav>GajoGrad Event</nav></Link>
+          <Link className='Links' to='/Gajograd2021'><nav>Gajograd Event</nav></Link>
           
           <nav>Order Dice App</nav>
         </div>

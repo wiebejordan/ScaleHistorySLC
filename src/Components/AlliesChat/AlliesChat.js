@@ -20,12 +20,16 @@ const  AlliesChat = (props) => {
     socket.on('allies-message', ({name, message}) => {
       setMessage([...chat, {name, message}])
     })
-    socket.addEventListener('allied-prev-messages', function(alliedMessages){
-      for(let i = 0; i < alliedMessages.length; i++){
-      prevMsg.prev(alliedMessages[i].message)
+
+    socket.on('global-message', ({name, message}) => {
+      setMessage([...chat, {name, message}])
+    } )
+    // socket.addEventListener('allied-prev-messages', function(alliedMessages){
+    //   for(let i = 0; i < alliedMessages.length; i++){
+    //   prevMsg.prev(alliedMessages[i].message)
       
-      }
-    })
+    //   }
+    // })
 
   })
 
@@ -36,8 +40,14 @@ const  AlliesChat = (props) => {
   const onMessageSubmit = (e) => {
     e.preventDefault()
     const {name, message} = state
-    socket.emit('allies-message', {name, message});
-    setState({message: '', name });
+    if(props.user.isadmin === true){
+      socket.emit('global-message', {name, message});
+      setState({message: '', name });
+    }
+    else {
+      socket.emit('allies-message', {name, message});
+      setState({message: '', name });
+    }
   }
 
   

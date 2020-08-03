@@ -12,7 +12,7 @@ const BlogPost = ({ match }) => {
         [profileImg, setProfileImg] = useState('');
 
   useEffect(() => {
-    console.log(match);
+    
     
     if(match.params.postid){
     axios.get(`/api/blogpost/${match.params.postid}`)

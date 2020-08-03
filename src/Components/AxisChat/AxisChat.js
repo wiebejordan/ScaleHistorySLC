@@ -20,12 +20,17 @@ const  Axischat = (props) => {
     socket.on('axis-message', ({name, message}) => {
       setMessage([...chat, {name, message}])
     })
-    socket.addEventListener('allied-prev-messages', function(alliedMessages){
-      for(let i = 0; i < alliedMessages.length; i++){
-      prevMsg.prev(alliedMessages[i].message)
+    
+    socket.on('global-message', ({name, message}) => {
+      setMessage([...chat, {name, message}])
+    } )
+    
+    // socket.addEventListener('allied-prev-messages', function(alliedMessages){
+    //   for(let i = 0; i < alliedMessages.length; i++){
+    //   prevMsg.prev(alliedMessages[i].message)
       
-      }
-    })
+    //   }
+    // })
 
   })
 
