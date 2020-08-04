@@ -60,8 +60,10 @@ app.get('/api/blogpost/:postid', postCtrl.getSinglePost);
 app.post('/api/post/', postCtrl.newPost);
 
 //chat endpoints
-app.get('/api/alliedmessages', chatCtrl.getAlliedMessages)
-app.post('/api/postalliedmessage', chatCtrl.postAlliedMessage)
+app.get('/api/alliedmessages', chatCtrl.getAlliedMessages);
+app.post('/api/postalliedmessage', chatCtrl.postAlliedMessage);
+app.get('/api/axismessages', chatCtrl.getAxisMessages);
+app.post('/api/postaxismessage', chatCtrl.postAxisMessage);
 //socket 
 
 const history = []

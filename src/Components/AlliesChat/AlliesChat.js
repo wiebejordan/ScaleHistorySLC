@@ -1,8 +1,10 @@
-import React, {useState, useEffect, useSelector} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import io from 'socket.io-client'
 import '../AlliesChat/Chat.css'
 import {connect} from 'react-redux';
 import axios from 'axios';
+
+
 
 
 const socket = io.connect('http://localhost:5050');
@@ -11,31 +13,32 @@ const mapStateToProps = reduxState => reduxState;
 
 
 
+
 const  AlliesChat = (props) => {
 
   
   const [state, setState] = useState({message: '', name: props.user.username});
-  const [chat, setMessage] = useState([]);
+  const [chat, setChat] = useState([]);
+
+  
   
   useEffect(() => {
     getMessages()
+    
   }, [])
 
   
   useEffect(() => {
     
+    scrollToMyRef()
 
     socket.on('allies-message', ({name, message}) => {
-      setMessage([...chat, {name, message}])
+      setChat([...chat, {name, message}])
     })
 
     socket.on('global-message', ({name, message}) => {
-      setMessage([...chat, {name, message}])
+      setChat([...chat, {name, message}])
     } )
-
-
-    
-    console.log(props.user)
 
   })
 
@@ -51,21 +54,22 @@ const  AlliesChat = (props) => {
       socket.emit('global-message', {name: `ADMIN`, message});
       setState({message: '', name });
       postMessages();
+     
+      
     }
     else {
       socket.emit('allies-message', {name, message});
       setState({message: '', name });
-      console.animate({
-        scrollTop: console.get[0].scrollHeight
-      }, 500)
       postMessages();
+      
+      
     }
   }
 
   const getMessages = () => {
       axios.get('/api/alliedmessages')
 
-      .then(res => setMessage(res.data))
+      .then(res => setChat(res.data))
       .catch(err => console.log(err));
   }
 
@@ -78,6 +82,14 @@ const  AlliesChat = (props) => {
       .catch(err => console.log(err));
   }
 
+  const messagesEndRef = useRef(null) 
+
+  const scrollToMyRef = () => {
+    const scroll =
+      messagesEndRef.current.scrollHeight -
+      messagesEndRef.current.clientHeight;
+      messagesEndRef.current.scrollTo(0, scroll);
+  };
   
   const renderChat = () => {
     return chat.map(({name, message}, i) => (
@@ -93,11 +105,15 @@ const  AlliesChat = (props) => {
   }
   
   return (
+    
     <div className='chat-container'>
       <h1>Communications</h1>
-      <div className='chat-window'>
+      
+      <div ref={messagesEndRef} className='chat-window'>
         {renderChat()}
+        
       </div>
+      
       <div >
       <form className='chat-inputs' onSubmit={onMessageSubmit}>
         {/* <div className='name-field'>
@@ -122,6 +138,7 @@ const  AlliesChat = (props) => {
       </form>
       </div>
     </div>
+          
   );
 
 };
