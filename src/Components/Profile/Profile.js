@@ -37,6 +37,14 @@ class Profile extends Component{
           }}/>
           <h1>{this.props.user.username}</h1>
 
+          <div className='profile-events'>
+          <h3>Registered Events:</h3>
+
+          {this.props.user.side
+          ? (<p>You are registered for GajoGrad 2021 on the side of the {this.props.user.side}!</p>)
+          :(<p>n/a</p>)}
+          </div>
+
         <button onClick={(e) => { if (window.confirm('Are you sure you wish to delete your account?')) this.deleteUser(e) } }>Delete Profile</button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useSelector} from 'react';
 import io from 'socket.io-client'
-import '../AlliesChat/AlliesChat.css'
+import '../AlliesChat/Chat.css'
 import {connect} from 'react-redux';
 
 

@@ -25,16 +25,32 @@
   border-radius: 50%;
 }
 
+.profile-events{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-events h3{
+  margin: 0px;
+}
+
 @media(max-width: 518px){
   .profile-container{
     height: 100vh;
     width: 100vw;
     justify-content: center;
     margin-bottom: 0px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
 
   .profile-container button{
     margin-bottom:200px;
+  }
+}
+
+@media(max-width: 377px){
+  .profile-events p{
+    font-size: 12px;
   }
 }

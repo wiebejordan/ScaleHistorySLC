@@ -1,22 +1,30 @@
 import React, {useState, useEffect, useSelector} from 'react';
 import io from 'socket.io-client'
-import '../AlliesChat/AlliesChat.css'
+import '../AlliesChat/Chat.css'
 import {connect} from 'react-redux';
-
+import axios from 'axios';
 
 
 const socket = io.connect('http://localhost:5050');
 
 const mapStateToProps = reduxState => reduxState;
 
+
+
 const  AlliesChat = (props) => {
 
   
   const [state, setState] = useState({message: '', name: props.user.username});
   const [chat, setMessage] = useState([]);
-  const prevMsg = []
-
+  
   useEffect(() => {
+    getMessages()
+  }, [])
+
+  
+  useEffect(() => {
+    
+
     socket.on('allies-message', ({name, message}) => {
       setMessage([...chat, {name, message}])
     })
@@ -24,12 +32,10 @@ const  AlliesChat = (props) => {
     socket.on('global-message', ({name, message}) => {
       setMessage([...chat, {name, message}])
     } )
-    // socket.addEventListener('allied-prev-messages', function(alliedMessages){
-    //   for(let i = 0; i < alliedMessages.length; i++){
-    //   prevMsg.prev(alliedMessages[i].message)
-      
-    //   }
-    // })
+
+
+    
+    console.log(props.user)
 
   })
 
@@ -39,18 +45,38 @@ const  AlliesChat = (props) => {
 
   const onMessageSubmit = (e) => {
     e.preventDefault()
+
     const {name, message} = state
     if(props.user.isadmin === true){
-      socket.emit('global-message', {name, message});
+      socket.emit('global-message', {name: `ADMIN`, message});
       setState({message: '', name });
+      postMessages();
     }
     else {
       socket.emit('allies-message', {name, message});
       setState({message: '', name });
+      console.animate({
+        scrollTop: console.get[0].scrollHeight
+      }, 500)
+      postMessages();
     }
   }
 
-  
+  const getMessages = () => {
+      axios.get('/api/alliedmessages')
+
+      .then(res => setMessage(res.data))
+      .catch(err => console.log(err));
+  }
+
+  const postMessages = () => {
+    axios.post('/api/postalliedmessage', {name: state.name, message: state.message})
+
+      .then(() => {
+
+      })
+      .catch(err => console.log(err));
+  }
 
   
   const renderChat = () => {
@@ -66,9 +92,6 @@ const  AlliesChat = (props) => {
     
   }
   
-
-  
-
   return (
     <div className='chat-container'>
       <h1>Communications</h1>

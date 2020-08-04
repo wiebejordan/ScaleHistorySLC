@@ -6,6 +6,7 @@ const express = require('express'),
       authCtrl = require('./authController'),
       eventCtrl = require('./eventController'),
       mailCtrl = require('./mailController'),
+      chatCtrl = require('./chatController'),
       postCtrl = require('./postController'),
       {SERVER_PORT, SESSION_SECRET, DB_URI} = process.env,
       app = require('express')(),
@@ -17,7 +18,7 @@ const express = require('express'),
 app.use(express.json());
 
 app.use(session({
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   secret: SESSION_SECRET,
   cookie: {maxAge: 1000 * 60 * 60 * 24 * 7}
@@ -58,18 +59,16 @@ app.get('/api/blogposts', postCtrl.getPosts);
 app.get('/api/blogpost/:postid', postCtrl.getSinglePost);
 app.post('/api/post/', postCtrl.newPost);
 
+//chat endpoints
+app.get('/api/alliedmessages', chatCtrl.getAlliedMessages)
+app.post('/api/postalliedmessage', chatCtrl.postAlliedMessage)
 //socket 
 
-const axisMessages = [];
+const history = []
+ 
 
 io.on('connection', (socket) => {
-  const alliedMessages = [];
   
-   
-  io.emit('allies-prev-msg', alliedMessages)
-  io.addListener('allies-message', function(name, message){
-    alliedMessages.push({name, message});
-  })
   socket.on('allies-message', ({name, message}) => {
       io.emit('allies-message', {name, message})
   })
@@ -85,12 +84,3 @@ io.on('connection', (socket) => {
 
 
 server.listen(SERVER_PORT, () => console.log(`Crushing it on port ${SERVER_PORT}`));
-
-var messages = [];    
-io.sockets.addListener("connection", function(socket) {
-  socket.emit('chat-previous-messages', messages); //new code     
-  socket.addListener("chat-message", function(message, nickname) {
-    messages.push({message: message, nickname: nickname});  
-    io.sockets.emit("chat-message", message, nickname)
-   })
-})
