@@ -82,11 +82,12 @@ class EventRegister extends Component{
         <header>Gajograd 2021 Register</header>
 
         <div className='player-info'>
-        <input
+        
+        <input 
         name='name'
         value={this.state.name}
         onChange={e => this.handleInput(e)}
-        placeholder='enter name'
+        placeholder='first and last name'
         />
 
         <form>

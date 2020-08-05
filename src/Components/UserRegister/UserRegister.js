@@ -13,7 +13,7 @@ class UserRegister extends Component{
       username: '',
       password: '',
       email: '',
-      profile_img: 'https://i.stack.imgur.com/l60Hf.png',
+      profile_img: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4759b976-8db7-4848-ae2d-29c46ff49268/d36o3of-f8217607-3d21-49ea-9c0c-a4c21fb59a16.jpg/v1/fill/w_700,h_525,q_75,strp/ww2_us_soldier_with_thompson_by_jesusfood_d36o3of-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01MjUiLCJwYXRoIjoiXC9mXC80NzU5Yjk3Ni04ZGI3LTQ4NDgtYWUyZC0yOWM0NmZmNDkyNjhcL2QzNm8zb2YtZjgyMTc2MDctM2QyMS00OWVhLTljMGMtYTRjMjFmYjU5YTE2LmpwZyIsIndpZHRoIjoiPD03MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.mVjH-EpmNA8zf7d9YP8oR_mBKeDtW1c9qTXkng8uI84',
       isAdmin: false
     }
   }

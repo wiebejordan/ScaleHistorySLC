@@ -52,7 +52,7 @@ const  AlliesChat = (props) => {
     const {name, message} = state
     if(props.user.isadmin === true){
       socket.emit('global-message', {name: `ADMIN`, message});
-      setState({message: '', name });
+      setState({message: '', name: 'Admin' });
       postMessages();
      
       
@@ -73,14 +73,26 @@ const  AlliesChat = (props) => {
       .catch(err => console.log(err));
   }
 
-  const postMessages = () => {
-    axios.post('/api/postalliedmessage', {name: state.name, message: state.message})
+    const postMessages = () => {
+      if(props.user.isadmin === true){
+      axios.post('/api/postalliedmessage', {name: state.name, message: state.message})
 
-      .then(() => {
+        .then(() => {})
+        .catch(err => console.log(err));
+    
+     axios.post('/api/postaxismessage', {name: state.name, message: state.message})
 
-      })
-      .catch(err => console.log(err));
-  }
+        .then(() => {})
+        .catch(err => console.log(err));
+    
+    }
+    else {
+      axios.post('/api/postalliedmessage', {name: state.name, message: state.message})
+
+        .then(() => {})
+        .catch(err => console.log(err));
+    }
+}
 
   const messagesEndRef = useRef(null) 
 

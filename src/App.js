@@ -7,7 +7,18 @@ import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
 
 class App extends Component{
+  constructor(props){
+    super(props)
+
+    this.state = {
+      userReady: false 
+    }
+  }
   
+  componentDidMount = () => {
+    
+  }
+
   render(){
   return (
     <div>

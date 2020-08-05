@@ -1,12 +1,12 @@
 .allies-main{
-  height: 100vh;
+  height: auto;
   width: 100vw;
   background-image: url(https://www.iwm.org.uk/sites/default/files/styles/feature_hero_desktop_1x/public/2018-01/map_detail.jpg?itok=mzB9hsiX);
   color: white;
 }
 
 .allies-container{
-  height: 100vh;
+  height: auto;
   width: 100vw;
   background-color: rgba(22, 22, 22, 0.7);
   display: flex;

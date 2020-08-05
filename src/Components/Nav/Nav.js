@@ -14,7 +14,8 @@ class Nav extends Component{
         username: '',
         password: '',
         dropdownView: false,
-        dropdownLogin: false
+        dropdownLogin: false,
+        loading: true
       }
       
     }
@@ -22,6 +23,7 @@ class Nav extends Component{
   componentDidMount = () => {
     this.keepUser();
   }
+
 
   handleInput = (e) => {
     this.setState({[e.target.name]: e.target.value})
@@ -39,6 +41,7 @@ class Nav extends Component{
     axios.post('/auth/login', {username, password})
     .then(res => {
       this.props.getUser(res.data);
+      this.setState({loading: false})
       alert(`Welcome ${this.props.user.username}!`);
     })
     .catch(err => console.log(err))
@@ -135,7 +138,7 @@ class Nav extends Component{
         {/* ***************************************************** */}
         
         {/* Displays login inputs or Username if logged in ******* */}
-
+        
         {!this.props.user.username
         ?(
           <div className='nav-login'>
