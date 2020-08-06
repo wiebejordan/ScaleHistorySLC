@@ -20,7 +20,7 @@ const express = require('express'),
 
 app.use(express.json());
 
-app.use(express.static(`${__dirname}/../build`))
+
 
 app.use(session({
   resave: true,
@@ -88,6 +88,10 @@ io.on('connection', (socket) => {
   
 }) 
 
+app.use(express.static(`${__dirname}/../build`))
 
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 server.listen(SERVER_PORT, () => console.log(`Crushing it on port ${SERVER_PORT}`));

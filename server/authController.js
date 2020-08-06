@@ -50,6 +50,13 @@ module.exports = {
       .then(user => res.status(200).send(user))
       .catch(err => res.status(500).send(err));
       console.log(req.session.userid)
+
+      // if(req.session.userid){
+      //   res.status(200).send(req.session.userid);
+      // }
+      // else {
+      //   res.sendStatus(200)
+      // }
     },
 
     logout: (req, res) => {
