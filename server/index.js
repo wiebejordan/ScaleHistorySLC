@@ -16,6 +16,7 @@ const express = require('express'),
         pingTimeout: 60000,
       });
 
+      const path = require('path');
 
 app.use(express.json());
 
