@@ -20,6 +20,8 @@ const express = require('express'),
 
 app.use(express.json());
 
+app.use(express.static(__dirname + '/..build'))
+
 app.use(session({
   resave: true,
   saveUninitialized: true,
