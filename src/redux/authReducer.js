@@ -2,10 +2,10 @@ const initialState = {
   user: {
     username: '',
     profileImg: '',
+    isadmin: false,
     side: '',
     email: '',
     user_id: null,
-    isadmin: false
   }
 }
 

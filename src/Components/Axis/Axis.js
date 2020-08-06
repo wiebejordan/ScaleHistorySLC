@@ -38,7 +38,7 @@ class Axis extends Component{
         <div className='player-chart' key={i} >
           <img src={player.profile_img} />
           <p>{player.name}</p>
-          <p>{player.faction}</p>
+          <p className='player-faction'>{player.faction}</p>
         </div>
       ))
 

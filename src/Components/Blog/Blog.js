@@ -9,7 +9,7 @@ class Blog extends Component {
       super(props);
 
       this.state = {
-        posts: []
+        posts: [] 
       }
     }
 

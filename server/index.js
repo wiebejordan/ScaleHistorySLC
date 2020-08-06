@@ -12,7 +12,9 @@ const express = require('express'),
       app = require('express')(),
       server = require('http').createServer(app),
       socket = require('socket.io'),
-      io = socket(server);
+      io = socket(server, {
+        pingTimeout: 60000,
+      });
 
 
 app.use(express.json());

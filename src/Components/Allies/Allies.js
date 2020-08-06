@@ -17,18 +17,15 @@ class Allies extends Component{
     }
 
    componentDidMount(){
-    if(this.props.user){
-     this.getAllies();
-     console.log(this.props.user)
-    }
-      else if(!this.props.user.side){
+     if(!this.props.user.side){
         this.props.history.push('/Gajograd2021')
         alert('Please register for event to access Command Room')
       }
-      else if(this.props.user.side !== 'allies'){
+      else if(this.props.user.side === 'axis'){
         this.props.history.push('/Gajograd2021')
         alert('No Spies!')
       }
+      this.getAllies();
   }
 
   getAllies = () => {
@@ -48,7 +45,7 @@ class Allies extends Component{
         <div key={i} className='player-chart' >
           <img src={player.profile_img} />
           <p>{player.name}</p>
-          <p>{player.faction}</p>
+          <p className='player-faction'>{player.faction}</p>
         </div>
       ))
 

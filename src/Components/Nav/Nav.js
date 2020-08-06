@@ -24,6 +24,12 @@ class Nav extends Component{
     this.keepUser();
   }
 
+  componentWillReceiveProps = (nextProps) => {
+    if(this.props.user.side !== nextProps.user.side){
+      this.keepUser();
+    }
+  }
+
 
   handleInput = (e) => {
     this.setState({[e.target.name]: e.target.value})
@@ -44,7 +50,7 @@ class Nav extends Component{
       this.setState({loading: false})
       alert(`Welcome ${this.props.user.username}!`);
     })
-    .catch(err => console.log(err))
+    .catch(() => alert('username and password do not match'))
     }
   }
 
