@@ -98,6 +98,8 @@
 @media(max-width: 930px){
   .nav{
     justify-content: space-around;
+    /* position: fixed;
+    top: 0px; */
   }
 
   .nav-title{

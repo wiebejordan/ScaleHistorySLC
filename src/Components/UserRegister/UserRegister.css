@@ -26,3 +26,15 @@
   width: 100px;
   border-radius: 50%;
 }
+
+@media(max-width: 605px){
+  .UR-container{
+    width: 400px;
+  }
+}
+
+@media(max-width: 407px){
+  .UR-container{
+    width: 300px;
+  }
+}

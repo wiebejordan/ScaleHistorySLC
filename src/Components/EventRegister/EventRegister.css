@@ -36,6 +36,12 @@
   align-items: center;
 }
 
+@media(max-width: 579px){
+  .event-reg-main{
+    align-items: flex-start;
+  }
+}
+
 @media(max-width: 414px){
   .event-reg-main{
     font-size: 30px;

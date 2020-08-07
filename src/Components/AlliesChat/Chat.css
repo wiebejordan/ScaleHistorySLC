@@ -58,6 +58,10 @@
     width: 575px;
   }
 
+  .chat-inputs{
+    width: 550px;
+  }
+
   .chat-message{
     width:300px;
   }
@@ -74,6 +78,10 @@
 
   .chat-name{
     width: 50px;
+  }
+
+  .chat-inputs{
+    width: 400px;
   }
 
   .chat-message{
@@ -98,6 +106,9 @@
     width: 50px;
   }
 
+  .chat-inputs{
+    width: 300px;
+  }
   .chat-message{
     width:150px;
   }
