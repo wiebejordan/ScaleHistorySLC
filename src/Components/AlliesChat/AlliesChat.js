@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-const socket = io.connect();
+const socket = io.connect('164.90.158.25');
 
 const mapStateToProps = reduxState => reduxState;
 
