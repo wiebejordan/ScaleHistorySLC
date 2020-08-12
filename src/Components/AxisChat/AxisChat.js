@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-const socket = io.connect('http://scalehistoryslc.com');
+const socket = io.connect();
 
 const mapStateToProps = reduxState => reduxState;
 
