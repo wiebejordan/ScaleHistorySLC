@@ -54,6 +54,8 @@ class EventRegister extends Component{
         })
         .catch(err => console.log(err));
 
+        //registering for event updates user profile so that they can enter command room
+
         Axios.put(`/api/addside/${this.props.user.user_id}`, {side: this.state.selectedOption})
         .then(() => this.props.history.push(`/Gajograd2021`))
         .catch(err => console.log(err))

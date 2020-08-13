@@ -66,7 +66,7 @@ module.exports = {
         from: `Jordan Wiebe <${EMAIL}>`,
         to: `${email}`,
         subject: 'You have registered for Gajograd 2021!',
-        text: 'Welcome to ScaleHistorySLC!',
+        text: 'You have registered for the Gajograd 2021 Bolt Action event on the side of the ${req.query.side}! Attached below is the player packet! See you there! ',
         html: `<div> You have registered for the Gajograd 2021 Bolt Action event on the side of the ${req.query.side}! Attached below is the player packet! See you there! </div>
                <img src="https://launch.battlefront.co.nz/wp-content/uploads/Stalingrad-artwork.jpeg"/>`,
         attachments: [
