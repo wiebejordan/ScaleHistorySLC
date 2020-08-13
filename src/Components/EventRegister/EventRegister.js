@@ -48,7 +48,7 @@ class EventRegister extends Component{
         alert('please enter your faction');
       }
       else{
-        Axios.post('/api/playerregister', {player_id: this.props.user.user_id, name: this.state.name, side: this.state.selectedOption, faction: this.state.faction, payed: this.state.payed})
+         Axios.post('/api/playerregister', {player_id: this.props.user.user_id, name: this.state.name, side: this.state.selectedOption, faction: this.state.faction, payed: this.state.payed})
         .then(() => { alert('You are now registered for Gajograd 2021! Head to the Command Room to plan with your teammates!')
           
         })
@@ -60,17 +60,18 @@ class EventRegister extends Component{
         .then(() => this.props.history.push(`/Gajograd2021`))
         .catch(err => console.log(err))
 
-        Axios.post('/');
-        this.props.history.push('/Gajograd2021')
+        
+          this.props.history.push('/Gajograd2021')
 
-        this.handleRegisterEmail();
+         this.handleRegisterEmail();
         }
       }
 
       handleRegisterEmail = () => {
         Axios.post(`/api/GG2021reg/${this.props.user.email}?side=${this.state.selectedOption}`)
         .then(res => {})
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
+        window.location.reload(false)
       }
     
       

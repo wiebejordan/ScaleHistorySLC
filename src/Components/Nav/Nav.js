@@ -24,8 +24,8 @@ class Nav extends Component{
     this.keepUser();
   }
 
-  componentWillReceiveProps = (nextProps) => {
-    if(this.props.user.side !== nextProps.user.side){
+  componentDidUpdate = (prevProps) => {
+    if(prevProps.user.side !== this.props.user.side){
       this.keepUser();
     }
   }

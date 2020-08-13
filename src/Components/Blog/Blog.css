@@ -63,14 +63,14 @@
 }
 
 .post-image{
-  height: 400px;
+  height: 300px;
   width: 500px;
   border: 1px solid white;
 }
 
 .post-title{
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 @media(max-width: 706px){
@@ -84,7 +84,7 @@
   }
 
   .post-title{
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .post-image{

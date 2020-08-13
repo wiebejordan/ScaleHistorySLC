@@ -47,11 +47,14 @@
 }
 
 .blogpost-image{
-  height: 400px;
+  height: 300px;
   width: 500px;
   border: 1px solid white;
 }
 
+.blogpost-content-box{
+  width: 70vw;
+}
 @media(max-width: 706px){
   .blogpost-container header{
     font-size: 30px;

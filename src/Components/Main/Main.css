@@ -30,12 +30,17 @@
 
 .blogpost{
   margin-top: 50px; 
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
 
 .blogpost img{
   width: 550px;
   height: 347px;
+  border: 1px solid white;
 }
 
 .bottom-video{

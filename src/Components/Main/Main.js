@@ -23,7 +23,7 @@ class Main extends Component{
         <div className='blogpost'>
         <h2>Big Trouble in Giant China - 8/10/20</h2>
         <Link to='/blogpost/4'>
-        <img src='https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/117534524_3664439590251450_291436893493482400_n.jpg?_nc_cat=106&_nc_sid=b9115d&_nc_ohc=II9TyZOTmpUAX_q5Hlx&_nc_ht=scontent-den4-1.xx&oh=3befd5bd014e121e452cb8b15f955c4b&oe=5F5A9CB9'/>
+        <img src='https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/117326428_3664439220251487_3427643653400064994_n.jpg?_nc_cat=110&_nc_sid=b9115d&_nc_ohc=YNpuDQ4RJFgAX9IEq_h&_nc_ht=scontent-den4-1.xx&oh=22c043f669ddcfcd25f50ac553876cab&oe=5F5BCADB'/>
         </Link>
         </div>
 
