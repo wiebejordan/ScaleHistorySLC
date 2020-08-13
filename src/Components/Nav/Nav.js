@@ -38,6 +38,15 @@ class Nav extends Component{
     }
   };
 
+  toggleScroll2 = () => {
+    if(this.state.dropdownLogin === false){
+      document.body.style.overflow = "hidden"
+    }
+    else if(this.state.dropdownLogin === true){
+      document.body.style.overflow = "auto"
+    }
+  };
+
   
 
   handleInput = (e) => {
@@ -101,6 +110,7 @@ class Nav extends Component{
       this.setState({dropdownView: !this.state.dropdownView});
       this.setState({dropdownLogin: !this.state.dropdownLogin});
     }
+    this.toggleScroll2()
   }
 
   handleDropdownLogin = () => {
