@@ -5,6 +5,7 @@ import {getUser, clearUser} from '../../redux/authReducer';
 import '../Nav/nav.css';
 import axios from 'axios';
 import hamburger from '../Nav/hamburger.png';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 class Nav extends Component{
     constructor(props){
@@ -20,16 +21,24 @@ class Nav extends Component{
       
     }
 
+  
+
   componentDidMount = () => {
     this.keepUser();
+    
   }
 
-  componentDidUpdate = (prevProps) => {
-    if(prevProps.user.side !== this.props.user.side){
-      this.keepUser();
+
+  toggleScroll = () => {
+    if(this.state.dropdownView === false){
+      document.body.style.overflow = "hidden"
     }
-  }
+    else if(this.state.dropdownView === true){
+      document.body.style.overflow = "auto"
+    }
+  };
 
+  
 
   handleInput = (e) => {
     this.setState({[e.target.name]: e.target.value})
@@ -81,6 +90,7 @@ class Nav extends Component{
       this.setState({dropdownLogin: !this.state.dropdownLogin});
       this.setState({dropdownView: !this.state.dropdownView});
     }
+    this.toggleScroll()
   }
 
   toggleLoginDropdown = () => {

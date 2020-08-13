@@ -1,10 +1,11 @@
+
+
 .nav{
   width: 100vw;
   height: 75px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   background: rgb(58,109,28);
   background: linear-gradient(102deg, rgba(58,109,28,1) 23%, rgba(176,190,169,1) 100%);
   color: rgb(241, 247, 238);
@@ -144,6 +145,7 @@
     justify-content: flex-start;
     align-content: center;
     font-weight: lighter;
+    -webkit-overflow-scrolling: touch;
   }
 
   .mobile-options {
