@@ -169,6 +169,7 @@ class Nav extends Component{
         ?(
           <div className='nav-login'>
             Username: <input
+
             name='username'
             value={this.state.username}
             onChange={e => this.handleInput(e)}
@@ -176,6 +177,7 @@ class Nav extends Component{
             />
 
             Password: <input
+            type='password'
             name='password'
             value={this.state.password}
             onChange={e => this.handleInput(e)}
@@ -227,6 +229,7 @@ class Nav extends Component{
           />
 
             Password: <input
+            type='password'
             name='password'
             value={this.state.password}
             onChange={e => this.handleInput(e)}
