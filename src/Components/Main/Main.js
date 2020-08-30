@@ -17,7 +17,7 @@ class Main extends Component{
         <div className='main-container'>
         <h1>The Latest:</h1>
         <div>
-        <iframe  src="https://www.youtube.com/embed/rf-1I8K0TSE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe  src="https://www.youtube.com/embed/lZwVMogfAos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <div className='blogpost'>
@@ -27,8 +27,8 @@ class Main extends Component{
         </Link>
         </div>
 
-        <h1>Metal Miniatures</h1>
-        <iframe className='bottom-video' width="560" height="315" src="https://www.youtube.com/embed/lZwVMogfAos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h1>Japanese Army Overview</h1>
+        <iframe className='bottom-video' width="560" height="315" src="https://www.youtube.com/embed/rf-1I8K0TSE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
       </div>
     )

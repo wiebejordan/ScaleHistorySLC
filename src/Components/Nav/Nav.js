@@ -135,12 +135,12 @@ class Nav extends Component{
         <p>'Putting the "able" back in tabletop standard!'</p>
         </div>
 
+        {/* Drop Down Menu **********************************************/}
         <div className='dropdown' onClick={this.toggleDropdown}>
           <nav>SHSLC</nav>
           <img src={hamburger}/>
         </div>
 
-        {/* Drop Down Menu **********************************************/}
         {this.state.dropdownView
         ?(
           <nav className='mobile-menu'>
@@ -154,7 +154,10 @@ class Nav extends Component{
 
           <Link className='Links' to='/Gajograd2021'><nav>Gajograd Event</nav></Link>
           
-          <nav>Order Dice App</nav>
+          <Link className='Links' to='/About'>
+          <nav>About</nav>
+          </Link>
+          
           </span>
           </nav>
         )
@@ -255,7 +258,10 @@ class Nav extends Component{
 
           <Link className='Links' to='/Gajograd2021'><nav>Gajograd Event</nav></Link>
           
-          <nav>Order Dice App</nav>
+          <Link className='Links' to='/About'>
+          <nav>About</nav>
+          </Link>
+
         </div>
       </div>
     )
