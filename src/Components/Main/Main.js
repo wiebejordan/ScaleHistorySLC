@@ -27,7 +27,7 @@ class Main extends Component{
         </Link>
         </div>
 
-        <h1>Japanese Army Overview</h1>
+        <h2>Japanese Army Overview</h2>
         <iframe className='bottom-video' width="560" height="315" src="https://www.youtube.com/embed/rf-1I8K0TSE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
       </div>
