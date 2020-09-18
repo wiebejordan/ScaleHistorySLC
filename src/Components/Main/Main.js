@@ -23,11 +23,11 @@ class Main extends Component{
         <div className='blogpost'>
         <h2>Big Trouble in Giant China - 8/10/20</h2>
         <Link to='/blogpost/4'>
-        <img src='https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/117326428_3664439220251487_3427643653400064994_n.jpg?_nc_cat=110&_nc_sid=b9115d&_nc_ohc=YNpuDQ4RJFgAX9IEq_h&_nc_ht=scontent-den4-1.xx&oh=22c043f669ddcfcd25f50ac553876cab&oe=5F5BCADB'/>
+        <img src='https://i.imgur.com/sAa0nVG.jpg'/>
         </Link>
         </div>
 
-        <h2>Japanese Army Overview</h2>
+        <h3>Japanese Army Overview </h3>
         <iframe className='bottom-video' width="560" height="315" src="https://www.youtube.com/embed/rf-1I8K0TSE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
       </div>
