@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div class='about-container'>
       <h1>About ScaleHistory SLC</h1>
-      <img style={{height: '300px', width: '500px'}} src='https://i.imgur.com/97QFsfB.jpg'/>
+      <img style={{height: '170px', width: '300px'}} src='https://i.imgur.com/97QFsfB.jpg'/>
 
       <div class='about-p-container'>
       <p>ScaleHistory SLC is a collection of medias focusing on historic tabletop wargaming, especially centered on World War 2. The mission of SHSLC is not only to produce top quality content (even if the miniatures are only "tabletop standard"), but also to bring a community together around Historic wargaming. </p>

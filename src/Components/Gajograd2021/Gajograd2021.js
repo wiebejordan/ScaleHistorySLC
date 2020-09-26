@@ -23,7 +23,7 @@ class Gajograd2021 extends Component{
         <div className='container'>
         <header>GAJOGRAD 2021</header>
         <h3>January 18th, 2021</h3>
-        <img src='https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/82867472_3146249728737108_3513119034348404736_n.jpg?_nc_cat=104&_nc_sid=b9115d&_nc_ohc=gDz7eOs5GGMAX-bVQjm&_nc_ht=scontent-den4-1.xx&oh=d0ac84451e81381822f704eb96398947&oe=5F6C13C5'/>
+        <img src='https://i.imgur.com/A3BYOoI.jpg'/>
 
         <section>
         The great city of Gajograd, located in Eastern Europe, is a strategic objective for both the Allies and the Axis, as it is a great supply center. Each side throws massive amounts of men and machine into the fray for control of the vital city and the surrounding rural area. 

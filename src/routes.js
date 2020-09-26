@@ -8,10 +8,12 @@ import Profile from './Components/Profile/Profile';
 import Allies from './Components/Allies/Allies';
 import Axis from './Components/Axis/Axis';
 import Blog from './Components/Blog/Blog';
+import Landing from './Components/OrderDiceApp/Landing/Landing';
 import BlogPost from './Components/BlogPost/BlogPost';
 import Gajograd2020 from './Components/Gajograd2020/Gajograd2020';
 import NoMatchPage from './Components/NoMatchPage/NoMatchPage';
 import AboutPage from './Components/AboutPage/AboutPage'
+import Setup from './Components/OrderDiceApp/Setup/Setup'
 
 export default (
   <Switch>
@@ -26,6 +28,8 @@ export default (
     <Route path='/blogpost/:postid' component={BlogPost}/>
     <Route path='/Gajograd2020' component={Gajograd2020}/>
     <Route path='/About' component={AboutPage}/>
+    <Route path='/OrderDiceApp' component={Landing}/>
+    <Route path='/OrderDiceDashboard' component={Setup}/>
     <Route component={NoMatchPage}/>
   </Switch>
 );
