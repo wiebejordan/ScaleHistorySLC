@@ -147,7 +147,7 @@ class Nav extends Component{
             <span className='mobile-options' onClick={this.toggleDropdown}>
           <Link className='Links' to='/'><nav>Home</nav></Link>
 
-          <a className='Links' href='https://www.youtube.com/channel/UCyI414P63CYsD1c5UuXGZBw?view_as=subscriber'><nav>Videos</nav></a>
+          <a className='Links' href='http://baorderdiceapp.com/'><nav>Order Dice App </nav></a>
 
           <Link className='Links' to='/blog'><nav>Blog</nav></Link>
           
@@ -251,7 +251,7 @@ class Nav extends Component{
       <div className='nav-links'>
           <Link className='Links' to='/'><nav>Home</nav></Link>
 
-          <a className='Links' href='https://www.youtube.com/channel/UCyI414P63CYsD1c5UuXGZBw?view_as=subscriber'><nav>Videos</nav></a>
+          <a className='Links' href='http://baorderdiceapp.com/'><nav>Order Dice App</nav></a>
 
           <Link className='Links' to='/blog'><nav>Blog</nav></Link>
           
