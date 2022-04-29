@@ -35,7 +35,7 @@ massive({
 }).then(db => {
     app.set('db', db);
     console.log('db connected')
-}).catch(err => console.log(err));
+}).catch(err => console.log('db not connected', err));
 
 
 //login/register endpoints
